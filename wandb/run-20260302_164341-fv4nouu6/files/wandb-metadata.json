@@ -1,0 +1,36 @@
+{
+  "os":  "Windows-11-10.0.26200-SP0",
+  "python":  "CPython 3.12.9",
+  "startedAt":  "2026-03-02T21:43:41.095821Z",
+  "program":  "d:\\School\\VSCode\\OnDeviceDeepLearning\\Project\\project.ipynb",
+  "codePath":  "project.ipynb",
+  "codePathLocal":  "project.ipynb",
+  "email":  "trntrang23@gmail.com",
+  "root":  "d:\\School\\VSCode\\OnDeviceDeepLearning\\Project",
+  "host":  "TS",
+  "executable":  "c:\\Users\\viole\\anaconda3\\python.exe",
+  "cpu_count":  8,
+  "cpu_count_logical":  16,
+  "gpu":  "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "419429347328",
+      "used":  "317743349760"
+    }
+  },
+  "memory":  {
+    "total":  "16905969664"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "memoryTotal":  "6442450944",
+      "cudaCores":  3840,
+      "architecture":  "Ampere",
+      "uuid":  "GPU-4ca3405b-7bc8-37c6-18b1-810c2d6a5858"
+    }
+  ],
+  "cudaVersion":  "13.1",
+  "writerId":  "e65dsmof8bay8uzoxulm4c8esp2qo116"
+}
