@@ -141,50 +141,63 @@ results/all_benchmarks.json
 The fastest model in the final Android benchmark is:
 
 ```text
-combined_quant_then_prune_selected__fp16_cast_gpu__prune_unstructured_mlp_l1_10
+FP16 + Unstructured MLP L1 10 Prune
 ```
 
-It reaches `120.6 ms` mean latency, `180.8 ms` P95 latency, and `8.29 examples/sec`, but its Token F1 is `0.0000` in the retained benchmark output.
+It reaches `120.6 ms` mean latency, `180.8 ms` P95 latency, and `8.29 examples/sec`. Its Token F1 is `0.1851`, which retains about `81.0%` of the baseline Token F1 while cutting disk size by about `50.5%`.
 
-The smallest and highest Token F1 model is:
+The highest-quality model is the full baseline:
 
 ```text
-combined_unstructured_prune_then_quant__prune_unstructured_mlp_l1_10__dynamic_int8_cpu_ptq
+Baseline
 ```
 
-It has the best Token F1 in the final aggregate at `0.2236` and the smallest disk size at `126.58 MB`, but it is much slower: `15430.8 ms` mean latency and `0.0648 examples/sec`.
+It has the best Token F1 at `0.2285`, but it is large and slow on Android ARM64 Termux: `311.11 MB`, `5476.5 ms` mean latency, and only `0.1826 examples/sec`.
 
-The plain dynamic INT8 model is close:
+The smallest models are:
 
 ```text
-dynamic_int8_cpu_ptq
+Dynamic INT8 PTQ
+Unstructured MLP L1 10 Prune + Dynamic INT8 PTQ
 ```
 
-It has Token F1 `0.2191`, the same `126.58 MB` disk size, and similar latency at `15236.9 ms`.
+Both are `126.58 MB`, a `59.3%` disk-size reduction from baseline. `Dynamic INT8 PTQ` preserves `0.2193` Token F1, or about `96.0%` of baseline quality, but it is much slower than the baseline in this run at `15236.9 ms` mean latency.
+
+The best simple balanced choice is:
+
+```text
+FP16
+```
+
+It keeps `0.2208` Token F1, or `96.6%` of baseline, reduces disk size by `50.5%`, and improves latency from `5476.5 ms` to `162.9 ms`.
 
 The best practical interpretation is:
 
-- FP16-style paths are much faster in this benchmark, but the retained output shows failed answer quality.
-- INT8 paths preserve much more measured Token F1 and reduce size by about `59%`, but latency is too high for a smooth chat experience.
-- Unstructured pruning alone does not reduce serialized disk size in this artifact format, so it is not enough by itself for deployment.
-- The final result favors INT8 for compression/quality experiments, but the Android inference path needs more runtime optimization before it is production-ready.
-
-Important caveat: several generated retention percentages are inflated because the selected reference model has very low absolute Token F1. Use the absolute Token F1, latency, and disk-size numbers for decision-making.
+- `FP16` and `BF16` provide the strongest quality/latency/size tradeoff in the retained results.
+- `FP16 + Unstructured MLP L1 10 Prune` is the fastest model, but it gives up more quality than plain `FP16`.
+- `Dynamic INT8 PTQ` gives the best compression while preserving quality, but the Android ARM64 CPU latency is too high for interactive use.
+- Structured pruning reduces parameter count and can improve latency, but the quality/size tradeoff is weaker than plain `FP16`.
+- The current best deployment candidate is `FP16` if latency and quality are both important.
 
 ## Benchmark Summary
 
-| Model | Family | Token F1 | Size MB | Mean ms | P95 ms | Examples/s |
-|---|---:|---:|---:|---:|---:|---:|
-| `combined_quant_then_prune_selected__fp16_cast_gpu__prune_unstructured_mlp_l1_10` | combined | 0.0000 | 154.01 | 120.6 | 180.8 | 8.2905 |
-| `prune_unstructured_mlp_l1_10` | prune | 0.0000 | 307.93 | 135.7 | 190.7 | 7.3673 |
-| `fp16_cast_gpu` | quant | 0.0000 | 154.01 | 162.9 | 271.5 | 6.1392 |
-| `prune_unstructured_attention_l1_10` | prune | 0.0016 | 307.93 | 164.1 | 235.4 | 6.0929 |
-| `combined_quant_then_prune_selected__bf16_cast_gpu__prune_unstructured_mlp_l1_10` | combined | 0.0000 | 154.01 | 169.1 | 287.4 | 5.9147 |
-| `bf16_cast_gpu` | quant | 0.0000 | 154.01 | 241.1 | 394.2 | 4.1471 |
-| `prune_unstructured_global_l1_10` | prune | 0.0088 | 307.93 | 335.8 | 1739.0 | 2.9779 |
-| `prune_unstructured_global_l1_20` | prune | 0.0290 | 307.93 | 1237.9 | 6331.2 | 0.8078 |
-| `dynamic_int8_cpu_ptq` | quant | 0.2191 | 126.58 | 15236.9 | 19735.6 | 0.0656 |
-| `combined_unstructured_prune_then_quant__prune_unstructured_mlp_l1_10__dynamic_int8_cpu_ptq` | combined | 0.2236 | 126.58 | 15430.8 | 19503.6 | 0.0648 |
+| Model | Family | Token F1 | Retention | Size MB | Size Red. | Mean ms | P95 ms | Examples/s |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| `FP16 + Unstructured MLP L1 10 Prune` | combined | 0.1851 | 81.0% | 154.01 | 50.5% | 120.6 | 180.8 | 8.2905 |
+| `Unstructured MLP L1 10 Prune` | prune | 0.2146 | 93.9% | 307.93 | 1.0% | 135.7 | 190.7 | 7.3673 |
+| `Structured MLP Intermediate 10 Prune + FP16` | combined | 0.1776 | 77.7% | 149.00 | 52.1% | 162.9 | 273.0 | 6.1389 |
+| `FP16` | quant | 0.2208 | 96.6% | 154.01 | 50.5% | 162.9 | 271.5 | 6.1392 |
+| `Unstructured Attention L1 10 Prune` | prune | 0.2074 | 90.8% | 307.93 | 1.0% | 164.1 | 235.4 | 6.0929 |
+| `BF16 + Unstructured MLP L1 10 Prune` | combined | 0.1868 | 81.8% | 154.01 | 50.5% | 169.1 | 287.4 | 5.9147 |
+| `Structured Attention Head 1 Prune` | prune | 0.2052 | 89.8% | 295.35 | 5.1% | 192.5 | 394.1 | 5.1953 |
+| `Structured MLP Intermediate 10 Prune` | prune | 0.2017 | 88.3% | 297.90 | 4.2% | 192.7 | 295.4 | 5.1901 |
+| `BF16` | quant | 0.2221 | 97.2% | 154.01 | 50.5% | 241.1 | 394.2 | 4.1471 |
+| `Unstructured Global L1 10 Prune` | prune | 0.1976 | 86.5% | 307.93 | 1.0% | 335.8 | 1739.0 | 2.9779 |
+| `Structured Attention Head 1 Prune + BF16` | combined | 0.1809 | 79.2% | 147.72 | 52.5% | 459.6 | 920.1 | 2.1756 |
+| `Unstructured Global L1 20 Prune` | prune | 0.1664 | 72.8% | 307.93 | 1.0% | 1237.9 | 6331.2 | 0.8078 |
+| `Baseline` | baseline | 0.2285 | 100.0% | 311.11 | 0.0% | 5476.5 | 9020.4 | 0.1826 |
+| `Dynamic INT8 PTQ` | quant | 0.2193 | 96.0% | 126.58 | 59.3% | 15236.9 | 19735.6 | 0.0656 |
+| `Unstructured MLP L1 10 Prune + Dynamic INT8 PTQ` | combined | 0.1884 | 82.5% | 126.58 | 59.3% | 15430.8 | 19503.6 | 0.0648 |
 
 ## How To Run
 

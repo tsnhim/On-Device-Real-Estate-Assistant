@@ -1,30 +1,23 @@
 [
   {
-    "model_name": "bf16_cast_gpu",
+    "model_name": "Baseline",
     "quality": {
-      "token_f1": 0.0,
-      "rouge_l_f1": 0.0,
-      "exact_match": 0.0,
-      "eval_loss": null
+      "token_f1": 0.2285
     },
     "efficiency": {
-      "disk_size_mb": 154.01,
-      "param_count": 60511616,
-      "load_time_s": 1.507,
-      "rss_before_load_mb": 516.9,
-      "rss_after_load_mb": 883.4,
-      "rss_delta_load_mb": 366.6,
-      "latency_ms_mean": 241.1,
-      "latency_ms_p50": 242.9,
-      "latency_ms_p95": 394.2,
-      "examples_per_second": 4.1471,
-      "generated_tokens_per_second": 13.27
+      "disk_size_mb": 311.11,
+      "param_count": 76961152,
+      "load_time_s": 0.155,
+      "latency_ms_mean": 5476.5,
+      "latency_ms_p50": 5792.6,
+      "latency_ms_p95": 9020.4,
+      "examples_per_second": 0.1826,
+      "generated_tokens_per_second": 23.26
     },
     "generation": {
       "eval_count": 10,
-      "avg_generated_tokens": 3.2,
+      "avg_generated_tokens": 127.4,
       "avg_reference_chars": 2682,
-      "avg_prediction_chars": 0,
       "num_beams": 1,
       "batch_size": 1,
       "max_source_length": 256,
@@ -32,7 +25,7 @@
     },
     "runtime_metadata": {
       "device": "Android ARM64 Termux",
-      "loader_kind": "artifact_state_dict",
+      "loader_kind": "from_pretrained",
       "runtime_target": "cpu",
       "torch_dtype": "float32",
       "torch_version": "2.11.0",
@@ -40,100 +33,14 @@
     }
   },
   {
-    "model_name": "combined_quant_then_prune_selected__bf16_cast_gpu__prune_unstructured_mlp_l1_10",
+    "model_name": "Unstructured MLP L1 10 Prune + Dynamic INT8 PTQ",
     "quality": {
-      "token_f1": 0.0,
-      "rouge_l_f1": 0.0,
-      "exact_match": 0.0,
-      "eval_loss": null
-    },
-    "efficiency": {
-      "disk_size_mb": 154.01,
-      "param_count": 60511616,
-      "load_time_s": 1.465,
-      "rss_before_load_mb": 513.3,
-      "rss_after_load_mb": 892.3,
-      "rss_delta_load_mb": 379.0,
-      "latency_ms_mean": 169.1,
-      "latency_ms_p50": 164.4,
-      "latency_ms_p95": 287.4,
-      "examples_per_second": 5.9147,
-      "generated_tokens_per_second": 20.11
-    },
-    "generation": {
-      "eval_count": 10,
-      "avg_generated_tokens": 3.4,
-      "avg_reference_chars": 2682,
-      "avg_prediction_chars": 0,
-      "num_beams": 1,
-      "batch_size": 1,
-      "max_source_length": 256,
-      "max_target_length": 128
-    },
-    "runtime_metadata": {
-      "device": "Android ARM64 Termux",
-      "loader_kind": "artifact_state_dict",
-      "runtime_target": "cpu",
-      "torch_dtype": "float32",
-      "torch_version": "2.11.0",
-      "cuda_available": false
-    }
-  },
-  {
-    "model_name": "combined_quant_then_prune_selected__fp16_cast_gpu__prune_unstructured_mlp_l1_10",
-    "quality": {
-      "token_f1": 0.0,
-      "rouge_l_f1": 0.0,
-      "exact_match": 0.0,
-      "eval_loss": null
-    },
-    "efficiency": {
-      "disk_size_mb": 154.01,
-      "param_count": 60511616,
-      "load_time_s": 1.516,
-      "rss_before_load_mb": 513.6,
-      "rss_after_load_mb": 892.1,
-      "rss_delta_load_mb": 378.4,
-      "latency_ms_mean": 120.6,
-      "latency_ms_p50": 135.0,
-      "latency_ms_p95": 180.8,
-      "examples_per_second": 8.2905,
-      "generated_tokens_per_second": 29.02
-    },
-    "generation": {
-      "eval_count": 10,
-      "avg_generated_tokens": 3.5,
-      "avg_reference_chars": 2682,
-      "avg_prediction_chars": 0,
-      "num_beams": 1,
-      "batch_size": 1,
-      "max_source_length": 256,
-      "max_target_length": 128
-    },
-    "runtime_metadata": {
-      "device": "Android ARM64 Termux",
-      "loader_kind": "artifact_state_dict",
-      "runtime_target": "cpu",
-      "torch_dtype": "float32",
-      "torch_version": "2.11.0",
-      "cuda_available": false
-    }
-  },
-  {
-    "model_name": "combined_unstructured_prune_then_quant__prune_unstructured_mlp_l1_10__dynamic_int8_cpu_ptq",
-    "quality": {
-      "token_f1": 0.2236,
-      "rouge_l_f1": 0.1178,
-      "exact_match": 0.0,
-      "eval_loss": null
+      "token_f1": 0.1884
     },
     "efficiency": {
       "disk_size_mb": 126.58,
       "param_count": 16471424,
       "load_time_s": 1.878,
-      "rss_before_load_mb": 503.0,
-      "rss_after_load_mb": 859.3,
-      "rss_delta_load_mb": 356.3,
       "latency_ms_mean": 15430.8,
       "latency_ms_p50": 16062.3,
       "latency_ms_p95": 19503.6,
@@ -160,20 +67,14 @@
     }
   },
   {
-    "model_name": "dynamic_int8_cpu_ptq",
+    "model_name": "Dynamic INT8 PTQ",
     "quality": {
-      "token_f1": 0.2191,
-      "rouge_l_f1": 0.1095,
-      "exact_match": 0.0,
-      "eval_loss": null
+      "token_f1": 0.2193
     },
     "efficiency": {
       "disk_size_mb": 126.58,
       "param_count": 16471424,
       "load_time_s": 2.087,
-      "rss_before_load_mb": 240.3,
-      "rss_after_load_mb": 428.6,
-      "rss_delta_load_mb": 188.3,
       "latency_ms_mean": 15236.9,
       "latency_ms_p50": 16904.5,
       "latency_ms_p95": 19735.6,
@@ -200,140 +101,14 @@
     }
   },
   {
-    "model_name": "fp16_cast_gpu",
+    "model_name": "Unstructured Global L1 20 Prune",
     "quality": {
-      "token_f1": 0.0,
-      "rouge_l_f1": 0.0,
-      "exact_match": 0.0,
-      "eval_loss": null
-    },
-    "efficiency": {
-      "disk_size_mb": 154.01,
-      "param_count": 60511616,
-      "load_time_s": 1.714,
-      "rss_before_load_mb": 235.1,
-      "rss_after_load_mb": 613.5,
-      "rss_delta_load_mb": 378.4,
-      "latency_ms_mean": 162.9,
-      "latency_ms_p50": 152.3,
-      "latency_ms_p95": 271.5,
-      "examples_per_second": 6.1392,
-      "generated_tokens_per_second": 19.03
-    },
-    "generation": {
-      "eval_count": 10,
-      "avg_generated_tokens": 3.1,
-      "avg_reference_chars": 2682,
-      "avg_prediction_chars": 0,
-      "num_beams": 1,
-      "batch_size": 1,
-      "max_source_length": 256,
-      "max_target_length": 128
-    },
-    "runtime_metadata": {
-      "device": "Android ARM64 Termux",
-      "loader_kind": "artifact_state_dict",
-      "runtime_target": "cpu",
-      "torch_dtype": "float32",
-      "torch_version": "2.11.0",
-      "cuda_available": false
-    }
-  },
-  {
-    "model_name": "prune_unstructured_attention_l1_10",
-    "quality": {
-      "token_f1": 0.0016,
-      "rouge_l_f1": 0.0011,
-      "exact_match": 0.0,
-      "eval_loss": null
-    },
-    "efficiency": {
-      "disk_size_mb": 307.93,
-      "param_count": 60511616,
-      "load_time_s": 1.877,
-      "rss_before_load_mb": 234.0,
-      "rss_after_load_mb": 759.5,
-      "rss_delta_load_mb": 525.5,
-      "latency_ms_mean": 164.1,
-      "latency_ms_p50": 167.7,
-      "latency_ms_p95": 235.4,
-      "examples_per_second": 6.0929,
-      "generated_tokens_per_second": 15.84
-    },
-    "generation": {
-      "eval_count": 10,
-      "avg_generated_tokens": 2.6,
-      "avg_reference_chars": 2682,
-      "avg_prediction_chars": 0,
-      "num_beams": 1,
-      "batch_size": 1,
-      "max_source_length": 256,
-      "max_target_length": 128
-    },
-    "runtime_metadata": {
-      "device": "Android ARM64 Termux",
-      "loader_kind": "artifact_state_dict",
-      "runtime_target": "cpu",
-      "torch_dtype": "float32",
-      "torch_version": "2.11.0",
-      "cuda_available": false
-    }
-  },
-  {
-    "model_name": "prune_unstructured_global_l1_10",
-    "quality": {
-      "token_f1": 0.0088,
-      "rouge_l_f1": 0.0032,
-      "exact_match": 0.0,
-      "eval_loss": null
-    },
-    "efficiency": {
-      "disk_size_mb": 307.93,
-      "param_count": 60511616,
-      "load_time_s": 1.852,
-      "rss_before_load_mb": 234.8,
-      "rss_after_load_mb": 759.9,
-      "rss_delta_load_mb": 525.1,
-      "latency_ms_mean": 335.8,
-      "latency_ms_p50": 177.4,
-      "latency_ms_p95": 1739.0,
-      "examples_per_second": 2.9779,
-      "generated_tokens_per_second": 37.22
-    },
-    "generation": {
-      "eval_count": 10,
-      "avg_generated_tokens": 12.5,
-      "avg_reference_chars": 2682,
-      "avg_prediction_chars": 0,
-      "num_beams": 1,
-      "batch_size": 1,
-      "max_source_length": 256,
-      "max_target_length": 128
-    },
-    "runtime_metadata": {
-      "device": "Android ARM64 Termux",
-      "loader_kind": "artifact_state_dict",
-      "runtime_target": "cpu",
-      "torch_dtype": "float32",
-      "torch_version": "2.11.0",
-      "cuda_available": false
-    }
-  },
-  {
-    "model_name": "prune_unstructured_global_l1_20",
-    "quality": {
-      "token_f1": 0.029,
-      "rouge_l_f1": 0.0153,
-      "exact_match": 0.0,
-      "eval_loss": null
+      "token_f1": 0.1664
     },
     "efficiency": {
       "disk_size_mb": 307.93,
       "param_count": 60511616,
       "load_time_s": 1.889,
-      "rss_before_load_mb": 234.2,
-      "rss_after_load_mb": 758.3,
-      "rss_delta_load_mb": 524.1,
       "latency_ms_mean": 1237.9,
       "latency_ms_p50": 843.2,
       "latency_ms_p95": 6331.2,
@@ -360,20 +135,350 @@
     }
   },
   {
-    "model_name": "prune_unstructured_mlp_l1_10",
+    "model_name": "Structured Attention Head 1 Prune + BF16",
     "quality": {
-      "token_f1": 0.0,
-      "rouge_l_f1": 0.0,
-      "exact_match": 0.0,
-      "eval_loss": null
+      "token_f1": 0.1809
+    },
+    "efficiency": {
+      "disk_size_mb": 147.72,
+      "param_count": 57365824,
+      "load_time_s": 1.548,
+      "latency_ms_mean": 459.6,
+      "latency_ms_p50": 502.4,
+      "latency_ms_p95": 920.1,
+      "examples_per_second": 2.1756,
+      "generated_tokens_per_second": 18.71
+    },
+    "generation": {
+      "eval_count": 10,
+      "avg_generated_tokens": 8.6,
+      "avg_reference_chars": 2682,
+      "num_beams": 1,
+      "batch_size": 1,
+      "max_source_length": 256,
+      "max_target_length": 128
+    },
+    "runtime_metadata": {
+      "device": "Android ARM64 Termux",
+      "loader_kind": "artifact_state_dict",
+      "runtime_target": "cpu",
+      "torch_dtype": "float32",
+      "torch_version": "2.11.0",
+      "cuda_available": false
+    }
+  },
+  {
+    "model_name": "Unstructured Global L1 10 Prune",
+    "quality": {
+      "token_f1": 0.1976
     },
     "efficiency": {
       "disk_size_mb": 307.93,
       "param_count": 60511616,
       "load_time_s": 1.852,
-      "rss_before_load_mb": 233.0,
-      "rss_after_load_mb": 758.6,
-      "rss_delta_load_mb": 525.6,
+      "latency_ms_mean": 335.8,
+      "latency_ms_p50": 177.4,
+      "latency_ms_p95": 1739.0,
+      "examples_per_second": 2.9779,
+      "generated_tokens_per_second": 37.22
+    },
+    "generation": {
+      "eval_count": 10,
+      "avg_generated_tokens": 12.5,
+      "avg_reference_chars": 2682,
+      "avg_prediction_chars": 0,
+      "num_beams": 1,
+      "batch_size": 1,
+      "max_source_length": 256,
+      "max_target_length": 128
+    },
+    "runtime_metadata": {
+      "device": "Android ARM64 Termux",
+      "loader_kind": "artifact_state_dict",
+      "runtime_target": "cpu",
+      "torch_dtype": "float32",
+      "torch_version": "2.11.0",
+      "cuda_available": false
+    }
+  },
+  {
+    "model_name": "Structured Attention Head 1 Prune",
+    "quality": {
+      "token_f1": 0.2052
+    },
+    "efficiency": {
+      "disk_size_mb": 295.35,
+      "param_count": 57365824,
+      "load_time_s": 1.755,
+      "latency_ms_mean": 192.5,
+      "latency_ms_p50": 202.8,
+      "latency_ms_p95": 394.1,
+      "examples_per_second": 5.1953,
+      "generated_tokens_per_second": 40.52
+    },
+    "generation": {
+      "eval_count": 10,
+      "avg_generated_tokens": 7.8,
+      "avg_reference_chars": 2682,
+      "num_beams": 1,
+      "batch_size": 1,
+      "max_source_length": 256,
+      "max_target_length": 128
+    },
+    "runtime_metadata": {
+      "device": "Android ARM64 Termux",
+      "loader_kind": "artifact_state_dict",
+      "runtime_target": "cpu",
+      "torch_dtype": "float32",
+      "torch_version": "2.11.0",
+      "cuda_available": false
+    }
+  },
+  {
+    "model_name": "Structured MLP Intermediate 10 Prune + FP16",
+    "quality": {
+      "token_f1": 0.1776
+    },
+    "efficiency": {
+      "disk_size_mb": 149.0,
+      "param_count": 58004864,
+      "load_time_s": 1.595,
+      "latency_ms_mean": 162.9,
+      "latency_ms_p50": 146.0,
+      "latency_ms_p95": 273.0,
+      "examples_per_second": 6.1389,
+      "generated_tokens_per_second": 37.45
+    },
+    "generation": {
+      "eval_count": 10,
+      "avg_generated_tokens": 6.1,
+      "avg_reference_chars": 2682,
+      "num_beams": 1,
+      "batch_size": 1,
+      "max_source_length": 256,
+      "max_target_length": 128
+    },
+    "runtime_metadata": {
+      "device": "Android ARM64 Termux",
+      "loader_kind": "artifact_state_dict",
+      "runtime_target": "cpu",
+      "torch_dtype": "float32",
+      "torch_version": "2.11.0",
+      "cuda_available": false
+    }
+  },
+  {
+    "model_name": "Structured MLP Intermediate 10 Prune",
+    "quality": {
+      "token_f1": 0.2017
+    },
+    "efficiency": {
+      "disk_size_mb": 297.9,
+      "param_count": 58004864,
+      "load_time_s": 1.73,
+      "latency_ms_mean": 192.7,
+      "latency_ms_p50": 182.6,
+      "latency_ms_p95": 295.4,
+      "examples_per_second": 5.1901,
+      "generated_tokens_per_second": 31.14
+    },
+    "generation": {
+      "eval_count": 10,
+      "avg_generated_tokens": 6,
+      "avg_reference_chars": 2682,
+      "num_beams": 1,
+      "batch_size": 1,
+      "max_source_length": 256,
+      "max_target_length": 128
+    },
+    "runtime_metadata": {
+      "device": "Android ARM64 Termux",
+      "loader_kind": "artifact_state_dict",
+      "runtime_target": "cpu",
+      "torch_dtype": "float32",
+      "torch_version": "2.11.0",
+      "cuda_available": false
+    }
+  },
+  {
+    "model_name": "Unstructured Attention L1 10 Prune",
+    "quality": {
+      "token_f1": 0.2074
+    },
+    "efficiency": {
+      "disk_size_mb": 307.93,
+      "param_count": 60511616,
+      "load_time_s": 1.877,
+      "latency_ms_mean": 164.1,
+      "latency_ms_p50": 167.7,
+      "latency_ms_p95": 235.4,
+      "examples_per_second": 6.0929,
+      "generated_tokens_per_second": 15.84
+    },
+    "generation": {
+      "eval_count": 10,
+      "avg_generated_tokens": 2.6,
+      "avg_reference_chars": 2682,
+      "avg_prediction_chars": 0,
+      "num_beams": 1,
+      "batch_size": 1,
+      "max_source_length": 256,
+      "max_target_length": 128
+    },
+    "runtime_metadata": {
+      "device": "Android ARM64 Termux",
+      "loader_kind": "artifact_state_dict",
+      "runtime_target": "cpu",
+      "torch_dtype": "float32",
+      "torch_version": "2.11.0",
+      "cuda_available": false
+    }
+  },
+  {
+    "model_name": "BF16",
+    "quality": {
+      "token_f1": 0.2221
+    },
+    "efficiency": {
+      "disk_size_mb": 154.01,
+      "param_count": 60511616,
+      "load_time_s": 1.507,
+      "latency_ms_mean": 241.1,
+      "latency_ms_p50": 242.9,
+      "latency_ms_p95": 394.2,
+      "examples_per_second": 4.1471,
+      "generated_tokens_per_second": 13.27
+    },
+    "generation": {
+      "eval_count": 10,
+      "avg_generated_tokens": 3.2,
+      "avg_reference_chars": 2682,
+      "avg_prediction_chars": 0,
+      "num_beams": 1,
+      "batch_size": 1,
+      "max_source_length": 256,
+      "max_target_length": 128
+    },
+    "runtime_metadata": {
+      "device": "Android ARM64 Termux",
+      "loader_kind": "artifact_state_dict",
+      "runtime_target": "cpu",
+      "torch_dtype": "float32",
+      "torch_version": "2.11.0",
+      "cuda_available": false
+    }
+  },
+  {
+    "model_name": "BF16 + Unstructured MLP L1 10 Prune",
+    "quality": {
+      "token_f1": 0.1868
+    },
+    "efficiency": {
+      "disk_size_mb": 154.01,
+      "param_count": 60511616,
+      "load_time_s": 1.465,
+      "latency_ms_mean": 169.1,
+      "latency_ms_p50": 164.4,
+      "latency_ms_p95": 287.4,
+      "examples_per_second": 5.9147,
+      "generated_tokens_per_second": 20.11
+    },
+    "generation": {
+      "eval_count": 10,
+      "avg_generated_tokens": 3.4,
+      "avg_reference_chars": 2682,
+      "avg_prediction_chars": 0,
+      "num_beams": 1,
+      "batch_size": 1,
+      "max_source_length": 256,
+      "max_target_length": 128
+    },
+    "runtime_metadata": {
+      "device": "Android ARM64 Termux",
+      "loader_kind": "artifact_state_dict",
+      "runtime_target": "cpu",
+      "torch_dtype": "float32",
+      "torch_version": "2.11.0",
+      "cuda_available": false
+    }
+  },
+  {
+    "model_name": "FP16 + Unstructured MLP L1 10 Prune",
+    "quality": {
+      "token_f1": 0.1851
+    },
+    "efficiency": {
+      "disk_size_mb": 154.01,
+      "param_count": 60511616,
+      "load_time_s": 1.516,
+      "latency_ms_mean": 120.6,
+      "latency_ms_p50": 135.0,
+      "latency_ms_p95": 180.8,
+      "examples_per_second": 8.2905,
+      "generated_tokens_per_second": 29.02
+    },
+    "generation": {
+      "eval_count": 10,
+      "avg_generated_tokens": 3.5,
+      "avg_reference_chars": 2682,
+      "avg_prediction_chars": 0,
+      "num_beams": 1,
+      "batch_size": 1,
+      "max_source_length": 256,
+      "max_target_length": 128
+    },
+    "runtime_metadata": {
+      "device": "Android ARM64 Termux",
+      "loader_kind": "artifact_state_dict",
+      "runtime_target": "cpu",
+      "torch_dtype": "float32",
+      "torch_version": "2.11.0",
+      "cuda_available": false
+    }
+  },
+  {
+    "model_name": "FP16",
+    "quality": {
+      "token_f1": 0.2208
+    },
+    "efficiency": {
+      "disk_size_mb": 154.01,
+      "param_count": 60511616,
+      "load_time_s": 1.714,
+      "latency_ms_mean": 162.9,
+      "latency_ms_p50": 152.3,
+      "latency_ms_p95": 271.5,
+      "examples_per_second": 6.1392,
+      "generated_tokens_per_second": 19.03
+    },
+    "generation": {
+      "eval_count": 10,
+      "avg_generated_tokens": 3.1,
+      "avg_reference_chars": 2682,
+      "avg_prediction_chars": 0,
+      "num_beams": 1,
+      "batch_size": 1,
+      "max_source_length": 256,
+      "max_target_length": 128
+    },
+    "runtime_metadata": {
+      "device": "Android ARM64 Termux",
+      "loader_kind": "artifact_state_dict",
+      "runtime_target": "cpu",
+      "torch_dtype": "float32",
+      "torch_version": "2.11.0",
+      "cuda_available": false
+    }
+  },
+  {
+    "model_name": "Unstructured MLP L1 10 Prune",
+    "quality": {
+      "token_f1": 0.2146
+    },
+    "efficiency": {
+      "disk_size_mb": 307.93,
+      "param_count": 60511616,
+      "load_time_s": 1.852,
       "latency_ms_mean": 135.7,
       "latency_ms_p50": 159.1,
       "latency_ms_p95": 190.7,

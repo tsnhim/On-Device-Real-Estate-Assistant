@@ -38,36 +38,46 @@
 <text class="tick" x="937.4" y="650">10000</text>
 <line class="grid" x1="96" y1="628.0" x2="1072" y2="628.0"/>
 <text class="tick" x="52" y="632.0">0.00</text>
-<line class="grid" x1="96" y1="518.2" x2="1072" y2="518.2"/>
-<text class="tick" x="52" y="522.2">0.05</text>
-<line class="grid" x1="96" y1="408.4" x2="1072" y2="408.4"/>
-<text class="tick" x="52" y="412.4">0.10</text>
-<line class="grid" x1="96" y1="298.6" x2="1072" y2="298.6"/>
-<text class="tick" x="52" y="302.6">0.15</text>
-<line class="grid" x1="96" y1="188.8" x2="1072" y2="188.8"/>
-<text class="tick" x="52" y="192.8">0.20</text>
-<line class="grid" x1="96" y1="78.9" x2="1072" y2="78.9"/>
-<text class="tick" x="52" y="82.9">0.25</text>
-<circle cx="204.4" cy="624.5" r="22.0" fill="#d9480f" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
-<text class="label" x="230.4" y="628.5">prune_unstructured_attention_l1_10</text>
-<circle cx="334.7" cy="608.7" r="22.0" fill="#d9480f" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
-<text class="label" x="360.7" y="612.7">prune_unstructured_global_l1_10</text>
-<circle cx="572.2" cy="564.3" r="22.0" fill="#d9480f" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
-<text class="label" x="598.2" y="568.3">prune_unstructured_global_l1_20</text>
-<circle cx="169.8" cy="628.0" r="22.0" fill="#d9480f" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
-<text class="label" x="195.8" y="632.0">prune_unstructured_mlp_l1_10</text>
-<circle cx="274.4" cy="628.0" r="17.3" fill="#087f5b" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
-<text class="label" x="295.8" y="632.0">bf16_cast_gpu</text>
-<circle cx="209.9" cy="628.0" r="17.3" fill="#7048e8" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
-<text class="label" x="231.2" y="632.0">combined_quant_then_prune_selected__bf16_cast_gpu__prune_unstructured_mlp_l1_10</text>
-<circle cx="148.4" cy="628.0" r="17.3" fill="#7048e8" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
-<text class="label" x="169.7" y="632.0">combined_quant_then_prune_selected__fp16_cast_gpu__prune_unstructured_mlp_l1_10</text>
-<circle cx="203.1" cy="628.0" r="17.3" fill="#087f5b" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
-<text class="label" x="224.4" y="632.0">fp16_cast_gpu</text>
-<circle cx="1031.4" cy="136.9" r="16.3" fill="#7048e8" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
-<text class="label" x="1051.6" y="140.9">combined_unstructured_prune_then_quant__prune_unstructured_mlp_l1_10__dynamic_int8_cpu_ptq</text>
-<circle cx="1029.1" cy="146.8" r="16.3" fill="#087f5b" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
-<text class="label" x="1049.3" y="150.8">dynamic_int8_cpu_ptq</text>
+<line class="grid" x1="96" y1="520.5" x2="1072" y2="520.5"/>
+<text class="tick" x="52" y="524.5">0.05</text>
+<line class="grid" x1="96" y1="413.1" x2="1072" y2="413.1"/>
+<text class="tick" x="52" y="417.1">0.10</text>
+<line class="grid" x1="96" y1="305.6" x2="1072" y2="305.6"/>
+<text class="tick" x="52" y="309.6">0.15</text>
+<line class="grid" x1="96" y1="198.2" x2="1072" y2="198.2"/>
+<text class="tick" x="52" y="202.2">0.20</text>
+<line class="grid" x1="96" y1="90.7" x2="1072" y2="90.7"/>
+<text class="tick" x="52" y="94.7">0.25</text>
+<circle cx="842.8" cy="136.9" r="22.0" fill="#3b5b92" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="868.8" y="140.9">Baseline</text>
+<circle cx="572.2" cy="270.4" r="21.9" fill="#d9480f" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="598.1" y="274.4">Unstructured Global L1 20 Prune</text>
+<circle cx="334.7" cy="203.3" r="21.9" fill="#d9480f" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="360.7" y="207.3">Unstructured Global L1 10 Prune</text>
+<circle cx="204.4" cy="182.3" r="21.9" fill="#d9480f" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="230.3" y="186.3">Unstructured Attention L1 10 Prune</text>
+<circle cx="169.8" cy="166.8" r="21.9" fill="#d9480f" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="195.7" y="170.8">Unstructured MLP L1 10 Prune</text>
+<circle cx="233.7" cy="194.5" r="21.7" fill="#d9480f" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="259.3" y="198.5">Structured MLP Intermediate 10 Prune</text>
+<circle cx="233.5" cy="187.0" r="21.6" fill="#d9480f" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="259.1" y="191.0">Structured Attention Head 1 Prune</text>
+<circle cx="274.4" cy="150.7" r="17.3" fill="#087f5b" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="295.7" y="154.7">BF16</text>
+<circle cx="209.9" cy="226.5" r="17.3" fill="#7048e8" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="231.1" y="230.5">BF16 + Unstructured MLP L1 10 Prune</text>
+<circle cx="148.4" cy="230.2" r="17.3" fill="#7048e8" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="169.6" y="234.2">FP16 + Unstructured MLP L1 10 Prune</text>
+<circle cx="203.1" cy="153.5" r="17.3" fill="#087f5b" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="224.3" y="157.5">FP16</text>
+<circle cx="203.1" cy="246.3" r="17.1" fill="#7048e8" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="224.2" y="250.3">Structured MLP Intermediate 10 Prune + FP16</text>
+<circle cx="391.9" cy="239.2" r="17.0" fill="#7048e8" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="412.9" y="243.2">Structured Attention Head 1 Prune + BF16</text>
+<circle cx="1031.4" cy="223.1" r="16.2" fill="#7048e8" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="1051.6" y="227.1">Unstructured MLP L1 10 Prune + Dynamic INT8 PTQ</text>
+<circle cx="1029.1" cy="156.7" r="16.2" fill="#087f5b" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="1049.3" y="160.7">Dynamic INT8 PTQ</text>
 <text class="label" x="504.0" y="690">Mean latency (ms/example, log scale) - lower is better</text>
 <text class="label" transform="translate(24 423.0) rotate(-90)">Token F1 - higher is better</text>
 </svg>
