@@ -1,0 +1,20 @@
+
+==================================================
+Model: prune_structured_mlp_intermediate_10
+==================================================
+Disk size: 297.9 MB
+  Pruned FFN: 1024 → 922
+Load time:  1.73s
+Params:     58,004,864
+RAM delta:  506 MB
+Running 10 examples...
+  [5/10] lat=134ms tf1=0.008
+  [10/10] lat=156ms tf1=0.000
+
+Results:
+  token_f1:  0.0022
+  rouge_l:   0.0013
+  lat_mean:  193ms
+  lat_p95:   295ms
+  ex/s:      5.1901
+Saved: /data/data/com.termux/files/home/models/my_benchmark_results/prune_structured_mlp_intermediate_10_metrics.json

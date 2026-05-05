@@ -1,0 +1,20 @@
+
+==================================================
+Model: combined_structured_prune_then_quant__prune_structured_attention_heads_1__bf16_cast_gpu
+==================================================
+Disk size: 147.7 MB
+  Pruned heads: 6 → 5
+Load time:  1.55s
+Params:     57,365,824
+RAM delta:  365 MB
+Running 10 examples...
+  [5/10] lat=743ms tf1=0.007
+  [10/10] lat=502ms tf1=0.047
+
+Results:
+  token_f1:  0.0107
+  rouge_l:   0.0070
+  lat_mean:  460ms
+  lat_p95:   920ms
+  ex/s:      2.1756
+Saved: /data/data/com.termux/files/home/models/my_benchmark_results/combined_structured_prune_then_quant__prune_structured_attention_heads_1__bf16_cast_gpu_metrics.json

@@ -1,0 +1,21 @@
+
+==================================================
+Model: fp16_cast_gpu
+==================================================
+Disk size: 154.0 MB
+Detected FLOAT32 model — loading normally...
+Load time:  1.71s
+Params:     60,511,616
+RAM delta:  378 MB
+Running 10 examples...
+  [5/10] lat=154ms tf1=0.000
+  [10/10] lat=271ms tf1=0.000
+
+Results:
+  token_f1:   0.0000
+  rouge_l:    0.0000
+  lat_mean:   163ms
+  lat_p95:    272ms
+  ex/s:       6.1392
+  tok/s:      19.0
+Saved: /data/data/com.termux/files/home/models/my_benchmark_results/fp16_cast_gpu_metrics.json

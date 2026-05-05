@@ -1,0 +1,21 @@
+
+==================================================
+Model: combined_unstructured_prune_then_quant__prune_unstructured_mlp_l1_10__dynamic_int8_cpu_ptq
+==================================================
+Disk size: 126.6 MB
+Detected quantized model — loading with qnnpack...
+Load time:  1.88s
+Params:     16,471,424
+RAM delta:  356 MB
+Running 10 examples...
+  [5/10] lat=16062ms tf1=0.176
+  [10/10] lat=16048ms tf1=0.287
+
+Results:
+  token_f1:   0.2236
+  rouge_l:    0.1178
+  lat_mean:   15431ms
+  lat_p95:    19504ms
+  ex/s:       0.0648
+  tok/s:      7.7
+Saved: /data/data/com.termux/files/home/models/my_benchmark_results/combined_unstructured_prune_then_quant__prune_unstructured_mlp_l1_10__dynamic_int8_cpu_ptq_metrics.json

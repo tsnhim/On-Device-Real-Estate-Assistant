@@ -1,0 +1,21 @@
+
+==================================================
+Model: combined_quant_then_prune_selected__bf16_cast_gpu__prune_unstructured_mlp_l1_10
+==================================================
+Disk size: 154.0 MB
+Detected FLOAT32 model — loading normally...
+Load time:  1.46s
+Params:     60,511,616
+RAM delta:  379 MB
+Running 10 examples...
+  [5/10] lat=287ms tf1=0.000
+  [10/10] lat=246ms tf1=0.000
+
+Results:
+  token_f1:   0.0000
+  rouge_l:    0.0000
+  lat_mean:   169ms
+  lat_p95:    287ms
+  ex/s:       5.9147
+  tok/s:      20.1
+Saved: /data/data/com.termux/files/home/models/my_benchmark_results/combined_quant_then_prune_selected__bf16_cast_gpu__prune_unstructured_mlp_l1_10_metrics.json
