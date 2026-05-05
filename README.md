@@ -1,12 +1,15 @@
-# OnDeviceDeepLearning
+# On-Device-Real-Estate-Assistant
 
-OnDeviceDeepLearning is an on-device real-estate assistant prototype. The project keeps a domain FLAN-T5 question-answering model, exports it to ONNX for Android inference, and benchmarks multiple optimization strategies on an Android ARM64 environment.
+On-Device-Real-Estate-Assistant is an on-device real-estate assistant prototype. The project keeps a domain FLAN-T5 question-answering model, exports it to ONNX for Android inference, and benchmarks multiple optimization strategies on an Android ARM64 environment.
+
+Team: Phong Cao, Trang Tran, Mai Do  
+School: Worcester Polytechnic Institute
 
 The current repository is organized as a runnable project, not as a notebook dump. The final benchmark aggregate is [results/all_benchmarks.json](results/all_benchmarks.json), and the generated report plots are in [benchmarks/visualizations/tradeoff_plots](benchmarks/visualizations/tradeoff_plots).
 
 ## Project Goals
 
-- Run a real-estate question-answering model locally on a phone.
+- Run a real-estate question-answering model locally on a phone which is limited resources.
 - Compare model optimization strategies for on-device deployment.
 - Measure both answer quality and device efficiency.
 - Package the Android inference path with ONNX Runtime.
@@ -17,8 +20,8 @@ The current repository is organized as a runnable project, not as a notebook dum
 ```text
 app/android/                         Android app project
 models/
-  flan_t5_zillow_final1/              retained Hugging Face FLAN-T5 model assets
-  whisper_model/                      retained Whisper speech model assets
+  flan_t5_zillow_final1/              Hugging Face FLAN-T5 model assets
+  whisper_model/                      Whisper speech model assets
   export_to_onnx.py                   PyTorch/Hugging Face -> ONNX export script
 benchmarks/
   data/flan_t5_baseline/              fixed QA pair cache and eval split
@@ -33,24 +36,38 @@ src/
 
 ## System Overview
 
-The deployment path is:
+The full project pipeline is:
 
 ```text
-Hugging Face / PyTorch FLAN-T5 checkpoint
-        -> models/export_to_onnx.py
-ONNX encoder and decoder files
-        -> app/android/app/src/main/assets/onnx_model/
-ONNX Runtime Android
-        -> local inference on phone
+User input
+  -> typed text
+  -> voice input -> phone speech-to-text -> text
+
+Text prompt
+  -> FLAN-T5 real-estate question-answering model
+  -> optional optimization experiments
+       -> quantization: FP16, BF16, INT8
+       -> pruning: attention, MLP, global unstructured pruning
+       -> combined pruning + quantization
+
+Selected / exported model
+  -> models/export_to_onnx.py
+  -> ONNX encoder and decoder files
+  -> app/android/app/src/main/assets/onnx_model/
+
+Android phone
+  -> ONNX Runtime Android
+  -> local inference
+  -> generated answer displayed in the app
 ```
 
-The Android app does not run PyTorch or TensorFlow directly. It loads `.onnx` files through ONNX Runtime Android and uses a small native SentencePiece bridge for tokenization.
+The Android app does not run PyTorch or TensorFlow directly. It loads the exported `.onnx` encoder and decoder files through ONNX Runtime Android. Because ONNX Runtime expects numeric tensors instead of raw text, the app also bundles the matching FLAN-T5 tokenizer file, `spiece.model`. A small native C++ SentencePiece bridge loads that file, converts user text into the token IDs expected by the ONNX model, and decodes generated token IDs back into readable text.
 
 ## Methodology
 
 The benchmark compares optimization families that are common for on-device transformer deployment:
 
-- Quantization: `fp16`, `bf16`, and dynamic `int8`
+- Quantization: `fp16`, `bf16`, and `int8`
 - Pruning: unstructured attention, MLP, and global pruning
 - Combined pipelines: pruning plus quantization
 
