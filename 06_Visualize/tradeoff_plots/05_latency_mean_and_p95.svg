@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="748" viewBox="0 0 1120 748">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; fill: #1f2933; }
+    .title { font-size: 22px; font-weight: 700; }
+    .subtitle { font-size: 12px; fill: #52606d; }
+    .axis { stroke: #9aa5b1; stroke-width: 1; }
+    .grid { stroke: #d9e2ec; stroke-width: 1; stroke-dasharray: 4 5; }
+    .label { font-size: 11px; fill: #334e68; }
+    .tick { font-size: 10px; fill: #52606d; }
+    .legend { font-size: 12px; fill: #334e68; }
+  </style>
+  <text class="title" x="36" y="34">Latency: Mean and P95</text>
+<text class="subtitle" x="36" y="55">Mean latency bars with P95 marker. Lower is better.</text>
+<rect x="760" y="28" width="18" height="12" fill="#1971c2" fill-opacity="0.78"/><text class="legend" x="784" y="39">Mean</text>
+<line x1="858" y1="34" x2="890" y2="34" stroke="#c92a2a" stroke-width="3"/><text class="legend" x="898" y="39">P95</text>
+<text class="label" x="28" y="95">FP16 + Unstructured MLP L1 10</text>
+<text class="label" x="28" y="108">Prune</text>
+<rect x="316" y="78" width="4.4" height="25" fill="#1971c2" fill-opacity="0.78"/>
+<line x1="322.6" y1="76" x2="322.6" y2="107" stroke="#c92a2a" stroke-width="3"/>
+<text class="label" x="328.4" y="95">120.6 ms</text>
+<text class="label" x="28" y="137">Unstructured MLP L1 10 Prune</text>
+<rect x="316" y="120" width="5.0" height="25" fill="#1971c2" fill-opacity="0.78"/>
+<line x1="323.0" y1="118" x2="323.0" y2="149" stroke="#c92a2a" stroke-width="3"/>
+<text class="label" x="329.0" y="137">135.7 ms</text>
+<text class="label" x="28" y="179">Structured MLP Intermediate 10</text>
+<text class="label" x="28" y="192">Prune + FP16</text>
+<rect x="316" y="162" width="6.0" height="25" fill="#1971c2" fill-opacity="0.78"/>
+<line x1="326.0" y1="160" x2="326.0" y2="191" stroke="#c92a2a" stroke-width="3"/>
+<text class="label" x="330.0" y="179">162.9 ms</text>
+<text class="label" x="28" y="221">FP16</text>
+<rect x="316" y="204" width="6.0" height="25" fill="#1971c2" fill-opacity="0.78"/>
+<line x1="326.0" y1="202" x2="326.0" y2="233" stroke="#c92a2a" stroke-width="3"/>
+<text class="label" x="330.0" y="221">162.9 ms</text>
+<text class="label" x="28" y="263">Unstructured Attention L1 10</text>
+<text class="label" x="28" y="276">Prune</text>
+<rect x="316" y="246" width="6.0" height="25" fill="#1971c2" fill-opacity="0.78"/>
+<line x1="324.6" y1="244" x2="324.6" y2="275" stroke="#c92a2a" stroke-width="3"/>
+<text class="label" x="330.0" y="263">164.1 ms</text>
+<text class="label" x="28" y="305">BF16 + Unstructured MLP L1 10</text>
+<text class="label" x="28" y="318">Prune</text>
+<rect x="316" y="288" width="6.2" height="25" fill="#1971c2" fill-opacity="0.78"/>
+<line x1="326.5" y1="286" x2="326.5" y2="317" stroke="#c92a2a" stroke-width="3"/>
+<text class="label" x="330.2" y="305">169.1 ms</text>
+<text class="label" x="28" y="347">Structured Attention Head 1</text>
+<text class="label" x="28" y="360">Prune</text>
+<rect x="316" y="330" width="7.1" height="25" fill="#1971c2" fill-opacity="0.78"/>
+<line x1="330.5" y1="328" x2="330.5" y2="359" stroke="#c92a2a" stroke-width="3"/>
+<text class="label" x="331.1" y="347">192.5 ms</text>
+<text class="label" x="28" y="389">Structured MLP Intermediate 10</text>
+<text class="label" x="28" y="402">Prune</text>
+<rect x="316" y="372" width="7.1" height="25" fill="#1971c2" fill-opacity="0.78"/>
+<line x1="326.8" y1="370" x2="326.8" y2="401" stroke="#c92a2a" stroke-width="3"/>
+<text class="label" x="331.1" y="389">192.7 ms</text>
+<text class="label" x="28" y="431">BF16</text>
+<rect x="316" y="414" width="8.8" height="25" fill="#1971c2" fill-opacity="0.78"/>
+<line x1="330.5" y1="412" x2="330.5" y2="443" stroke="#c92a2a" stroke-width="3"/>
+<text class="label" x="332.8" y="431">241.1 ms</text>
+<text class="label" x="28" y="473">Unstructured Global L1 10 Prune</text>
+<rect x="316" y="456" width="12.3" height="25" fill="#1971c2" fill-opacity="0.78"/>
+<line x1="379.8" y1="454" x2="379.8" y2="485" stroke="#c92a2a" stroke-width="3"/>
+<text class="label" x="336.3" y="473">335.8 ms</text>
+<text class="label" x="28" y="515">Structured Attention Head 1</text>
+<text class="label" x="28" y="528">Prune + BF16</text>
+<rect x="316" y="498" width="16.9" height="25" fill="#1971c2" fill-opacity="0.78"/>
+<line x1="349.8" y1="496" x2="349.8" y2="527" stroke="#c92a2a" stroke-width="3"/>
+<text class="label" x="340.9" y="515">459.6 ms</text>
+<text class="label" x="28" y="557">Unstructured Global L1 20 Prune</text>
+<rect x="316" y="540" width="45.4" height="25" fill="#1971c2" fill-opacity="0.78"/>
+<line x1="548.3" y1="538" x2="548.3" y2="569" stroke="#c92a2a" stroke-width="3"/>
+<text class="label" x="369.4" y="557">1,237.9 ms</text>
+<text class="label" x="28" y="599">Baseline</text>
+<rect x="316" y="582" width="200.9" height="25" fill="#1971c2" fill-opacity="0.78"/>
+<line x1="646.9" y1="580" x2="646.9" y2="611" stroke="#c92a2a" stroke-width="3"/>
+<text class="label" x="524.9" y="599">5,476.5 ms</text>
+<text class="label" x="28" y="641">Dynamic INT8 PTQ</text>
+<rect x="316" y="624" width="559.0" height="25" fill="#1971c2" fill-opacity="0.78"/>
+<line x1="1040.0" y1="622" x2="1040.0" y2="653" stroke="#c92a2a" stroke-width="3"/>
+<text class="label" x="883.0" y="641">15,236.9 ms</text>
+<text class="label" x="28" y="683">Unstructured MLP L1 10 Prune +</text>
+<text class="label" x="28" y="696">Dynamic INT8 PTQ</text>
+<rect x="316" y="666" width="566.1" height="25" fill="#1971c2" fill-opacity="0.78"/>
+<line x1="1031.5" y1="664" x2="1031.5" y2="695" stroke="#c92a2a" stroke-width="3"/>
+<text class="label" x="890.1" y="683">15,430.8 ms</text>
+</svg>

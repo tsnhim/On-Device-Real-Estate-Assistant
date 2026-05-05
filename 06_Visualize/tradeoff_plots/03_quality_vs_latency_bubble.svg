@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="720" viewBox="0 0 1120 720">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; fill: #1f2933; }
+    .title { font-size: 22px; font-weight: 700; }
+    .subtitle { font-size: 12px; fill: #52606d; }
+    .axis { stroke: #9aa5b1; stroke-width: 1; }
+    .grid { stroke: #d9e2ec; stroke-width: 1; stroke-dasharray: 4 5; }
+    .label { font-size: 11px; fill: #334e68; }
+    .tick { font-size: 10px; fill: #52606d; }
+    .legend { font-size: 12px; fill: #334e68; }
+  </style>
+  <text class="title" x="36" y="34">Quality vs Latency Tradeoff</text>
+<text class="subtitle" x="36" y="55">Bubble size = disk size. X-axis uses log scale because latency spans two orders of magnitude.</text>
+<circle cx="650" cy="34" r="6" fill="#3b5b92"/>
+<text class="legend" x="660" y="38">Baseline</text>
+<circle cx="778" cy="34" r="6" fill="#087f5b"/>
+<text class="legend" x="788" y="38">Quantization</text>
+<circle cx="906" cy="34" r="6" fill="#d9480f"/>
+<text class="legend" x="916" y="38">Pruning</text>
+<circle cx="1034" cy="34" r="6" fill="#7048e8"/>
+<text class="legend" x="1044" y="38">Combined</text>
+<line class="axis" x1="96" y1="628" x2="1072" y2="628"/>
+<line class="axis" x1="96" y1="78" x2="96" y2="628"/>
+<line class="grid" x1="114.3" y1="78" x2="114.3" y2="628"/>
+<text class="tick" x="99.3" y="650">100</text>
+<line class="grid" x1="240.4" y1="78" x2="240.4" y2="628"/>
+<text class="tick" x="225.4" y="650">200</text>
+<line class="grid" x1="407.2" y1="78" x2="407.2" y2="628"/>
+<text class="tick" x="392.2" y="650">500</text>
+<line class="grid" x1="533.4" y1="78" x2="533.4" y2="628"/>
+<text class="tick" x="518.4" y="650">1000</text>
+<line class="grid" x1="659.5" y1="78" x2="659.5" y2="628"/>
+<text class="tick" x="644.5" y="650">2000</text>
+<line class="grid" x1="826.3" y1="78" x2="826.3" y2="628"/>
+<text class="tick" x="811.3" y="650">5000</text>
+<line class="grid" x1="952.4" y1="78" x2="952.4" y2="628"/>
+<text class="tick" x="937.4" y="650">10000</text>
+<line class="grid" x1="96" y1="628.0" x2="1072" y2="628.0"/>
+<text class="tick" x="52" y="632.0">0.00</text>
+<line class="grid" x1="96" y1="520.5" x2="1072" y2="520.5"/>
+<text class="tick" x="52" y="524.5">0.05</text>
+<line class="grid" x1="96" y1="413.1" x2="1072" y2="413.1"/>
+<text class="tick" x="52" y="417.1">0.10</text>
+<line class="grid" x1="96" y1="305.6" x2="1072" y2="305.6"/>
+<text class="tick" x="52" y="309.6">0.15</text>
+<line class="grid" x1="96" y1="198.2" x2="1072" y2="198.2"/>
+<text class="tick" x="52" y="202.2">0.20</text>
+<line class="grid" x1="96" y1="90.7" x2="1072" y2="90.7"/>
+<text class="tick" x="52" y="94.7">0.25</text>
+<circle cx="842.8" cy="136.9" r="22.0" fill="#3b5b92" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="868.8" y="140.9">Baseline</text>
+<circle cx="572.2" cy="270.4" r="21.9" fill="#d9480f" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="598.1" y="274.4">Unstructured Global L1 20 Prune</text>
+<circle cx="334.7" cy="203.3" r="21.9" fill="#d9480f" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="360.7" y="207.3">Unstructured Global L1 10 Prune</text>
+<circle cx="204.4" cy="182.3" r="21.9" fill="#d9480f" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="230.3" y="186.3">Unstructured Attention L1 10 Prune</text>
+<circle cx="169.8" cy="166.8" r="21.9" fill="#d9480f" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="195.7" y="170.8">Unstructured MLP L1 10 Prune</text>
+<circle cx="233.7" cy="194.5" r="21.7" fill="#d9480f" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="259.3" y="198.5">Structured MLP Intermediate 10 Prune</text>
+<circle cx="233.5" cy="187.0" r="21.6" fill="#d9480f" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="259.1" y="191.0">Structured Attention Head 1 Prune</text>
+<circle cx="274.4" cy="150.7" r="17.3" fill="#087f5b" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="295.7" y="154.7">BF16</text>
+<circle cx="209.9" cy="226.5" r="17.3" fill="#7048e8" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="231.1" y="230.5">BF16 + Unstructured MLP L1 10 Prune</text>
+<circle cx="148.4" cy="230.2" r="17.3" fill="#7048e8" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="169.6" y="234.2">FP16 + Unstructured MLP L1 10 Prune</text>
+<circle cx="203.1" cy="153.5" r="17.3" fill="#087f5b" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="224.3" y="157.5">FP16</text>
+<circle cx="203.1" cy="246.3" r="17.1" fill="#7048e8" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="224.2" y="250.3">Structured MLP Intermediate 10 Prune + FP16</text>
+<circle cx="391.9" cy="239.2" r="17.0" fill="#7048e8" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="412.9" y="243.2">Structured Attention Head 1 Prune + BF16</text>
+<circle cx="1031.4" cy="223.1" r="16.2" fill="#7048e8" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="1051.6" y="227.1">Unstructured MLP L1 10 Prune + Dynamic INT8 PTQ</text>
+<circle cx="1029.1" cy="156.7" r="16.2" fill="#087f5b" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="1049.3" y="160.7">Dynamic INT8 PTQ</text>
+<text class="label" x="504.0" y="690">Mean latency (ms/example, log scale) - lower is better</text>
+<text class="label" transform="translate(24 423.0) rotate(-90)">Token F1 - higher is better</text>
+</svg>

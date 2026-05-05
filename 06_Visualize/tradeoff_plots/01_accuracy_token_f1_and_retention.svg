@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="780" viewBox="0 0 1180 780">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; fill: #1f2933; }
+    .title { font-size: 22px; font-weight: 700; }
+    .subtitle { font-size: 12px; fill: #52606d; }
+    .axis { stroke: #9aa5b1; stroke-width: 1; }
+    .grid { stroke: #d9e2ec; stroke-width: 1; stroke-dasharray: 4 5; }
+    .label { font-size: 11px; fill: #334e68; }
+    .tick { font-size: 10px; fill: #52606d; }
+    .legend { font-size: 12px; fill: #334e68; }
+  </style>
+  <text class="title" x="36" y="34">Accuracy: Token F1 and Baseline Retention</text>
+<text class="subtitle" x="36" y="55">Shows actual Token F1 and the same score as percentage retained versus baseline.</text>
+<text class="label" x="320" y="70">Token F1</text>
+<text class="label" x="792" y="70">Retention vs baseline</text>
+<text class="label" x="28" y="94">Baseline</text>
+<rect x="320" y="78" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="78" width="360.0" height="24" fill="#3b5b92" fill-opacity="0.84"/>
+<text class="label" x="688.0" y="94">0.2285</text>
+<rect x="792" y="78" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="78" width="300.0" height="24" fill="#3b5b92" fill-opacity="0.68"/>
+<text class="label" x="1100.0" y="94">100.0%</text>
+<text class="label" x="28" y="138">BF16</text>
+<rect x="320" y="122" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="122" width="349.9" height="24" fill="#087f5b" fill-opacity="0.84"/>
+<text class="label" x="677.9" y="138">0.2221</text>
+<rect x="792" y="122" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="122" width="291.6" height="24" fill="#087f5b" fill-opacity="0.68"/>
+<text class="label" x="1091.6" y="138">97.2%</text>
+<text class="label" x="28" y="182">FP16</text>
+<rect x="320" y="166" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="166" width="347.9" height="24" fill="#087f5b" fill-opacity="0.84"/>
+<text class="label" x="675.9" y="182">0.2208</text>
+<rect x="792" y="166" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="166" width="289.9" height="24" fill="#087f5b" fill-opacity="0.68"/>
+<text class="label" x="1089.9" y="182">96.6%</text>
+<text class="label" x="28" y="226">Dynamic INT8 PTQ</text>
+<rect x="320" y="210" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="210" width="345.5" height="24" fill="#087f5b" fill-opacity="0.84"/>
+<text class="label" x="673.5" y="226">0.2193</text>
+<rect x="792" y="210" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="210" width="287.9" height="24" fill="#087f5b" fill-opacity="0.68"/>
+<text class="label" x="1087.9" y="226">96.0%</text>
+<text class="label" x="28" y="270">Unstructured MLP L1 10 Prune</text>
+<rect x="320" y="254" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="254" width="338.1" height="24" fill="#d9480f" fill-opacity="0.84"/>
+<text class="label" x="666.1" y="270">0.2146</text>
+<rect x="792" y="254" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="254" width="281.8" height="24" fill="#d9480f" fill-opacity="0.68"/>
+<text class="label" x="1081.8" y="270">93.9%</text>
+<text class="label" x="28" y="314">Unstructured Attention L1 10</text>
+<text class="label" x="28" y="327">Prune</text>
+<rect x="320" y="298" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="298" width="326.8" height="24" fill="#d9480f" fill-opacity="0.84"/>
+<text class="label" x="654.8" y="314">0.2074</text>
+<rect x="792" y="298" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="298" width="272.3" height="24" fill="#d9480f" fill-opacity="0.68"/>
+<text class="label" x="1072.3" y="314">90.8%</text>
+<text class="label" x="28" y="358">Structured Attention Head 1</text>
+<text class="label" x="28" y="371">Prune</text>
+<rect x="320" y="342" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="342" width="323.3" height="24" fill="#d9480f" fill-opacity="0.84"/>
+<text class="label" x="651.3" y="358">0.2052</text>
+<rect x="792" y="342" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="342" width="269.4" height="24" fill="#d9480f" fill-opacity="0.68"/>
+<text class="label" x="1069.4" y="358">89.8%</text>
+<text class="label" x="28" y="402">Structured MLP Intermediate 10</text>
+<text class="label" x="28" y="415">Prune</text>
+<rect x="320" y="386" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="386" width="317.8" height="24" fill="#d9480f" fill-opacity="0.84"/>
+<text class="label" x="645.8" y="402">0.2017</text>
+<rect x="792" y="386" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="386" width="264.8" height="24" fill="#d9480f" fill-opacity="0.68"/>
+<text class="label" x="1064.8" y="402">88.3%</text>
+<text class="label" x="28" y="446">Unstructured Global L1 10 Prune</text>
+<rect x="320" y="430" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="430" width="311.3" height="24" fill="#d9480f" fill-opacity="0.84"/>
+<text class="label" x="639.3" y="446">0.1976</text>
+<rect x="792" y="430" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="430" width="259.4" height="24" fill="#d9480f" fill-opacity="0.68"/>
+<text class="label" x="1059.4" y="446">86.5%</text>
+<text class="label" x="28" y="490">Unstructured MLP L1 10 Prune +</text>
+<text class="label" x="28" y="503">Dynamic INT8 PTQ</text>
+<rect x="320" y="474" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="474" width="296.8" height="24" fill="#7048e8" fill-opacity="0.84"/>
+<text class="label" x="624.8" y="490">0.1884</text>
+<rect x="792" y="474" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="474" width="247.4" height="24" fill="#7048e8" fill-opacity="0.68"/>
+<text class="label" x="1047.4" y="490">82.5%</text>
+<text class="label" x="28" y="534">BF16 + Unstructured MLP L1 10</text>
+<text class="label" x="28" y="547">Prune</text>
+<rect x="320" y="518" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="518" width="294.3" height="24" fill="#7048e8" fill-opacity="0.84"/>
+<text class="label" x="622.3" y="534">0.1868</text>
+<rect x="792" y="518" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="518" width="245.3" height="24" fill="#7048e8" fill-opacity="0.68"/>
+<text class="label" x="1045.3" y="534">81.8%</text>
+<text class="label" x="28" y="578">FP16 + Unstructured MLP L1 10</text>
+<text class="label" x="28" y="591">Prune</text>
+<rect x="320" y="562" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="562" width="291.6" height="24" fill="#7048e8" fill-opacity="0.84"/>
+<text class="label" x="619.6" y="578">0.1851</text>
+<rect x="792" y="562" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="562" width="243.0" height="24" fill="#7048e8" fill-opacity="0.68"/>
+<text class="label" x="1043.0" y="578">81.0%</text>
+<text class="label" x="28" y="622">Structured Attention Head 1</text>
+<text class="label" x="28" y="635">Prune + BF16</text>
+<rect x="320" y="606" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="606" width="285.0" height="24" fill="#7048e8" fill-opacity="0.84"/>
+<text class="label" x="613.0" y="622">0.1809</text>
+<rect x="792" y="606" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="606" width="237.5" height="24" fill="#7048e8" fill-opacity="0.68"/>
+<text class="label" x="1037.5" y="622">79.2%</text>
+<text class="label" x="28" y="666">Structured MLP Intermediate 10</text>
+<text class="label" x="28" y="679">Prune + FP16</text>
+<rect x="320" y="650" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="650" width="279.8" height="24" fill="#7048e8" fill-opacity="0.84"/>
+<text class="label" x="607.8" y="666">0.1776</text>
+<rect x="792" y="650" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="650" width="233.2" height="24" fill="#7048e8" fill-opacity="0.68"/>
+<text class="label" x="1033.2" y="666">77.7%</text>
+<text class="label" x="28" y="710">Unstructured Global L1 20 Prune</text>
+<rect x="320" y="694" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="694" width="262.2" height="24" fill="#d9480f" fill-opacity="0.84"/>
+<text class="label" x="590.2" y="710">0.1664</text>
+<rect x="792" y="694" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="694" width="218.5" height="24" fill="#d9480f" fill-opacity="0.68"/>
+<text class="label" x="1018.5" y="710">72.8%</text>
+</svg>
