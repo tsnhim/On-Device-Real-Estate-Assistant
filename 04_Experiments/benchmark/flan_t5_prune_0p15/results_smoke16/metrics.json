@@ -1,0 +1,52 @@
+{
+  "model": {
+    "model_path": "02_Models/PyTorch/flan_t5_zillow_final1",
+    "strategy_manifest": "04_Experiments/optimized/flan_t5/prune_global_l1_0p15/strategy_manifest.json",
+    "device": "cpu",
+    "param_count": 76961152,
+    "disk_size_bytes": 310293733,
+    "disk_size_mb": 295.92
+  },
+  "split": {
+    "split_manifest": "04_Experiments/benchmark/flan_t5_baseline/split_manifest.json",
+    "eval_count": 16
+  },
+  "quality": {
+    "eval_loss": 3.499646,
+    "exact_match": 0.0,
+    "token_f1": 0.087068,
+    "rouge_l_f1": 0.073641,
+    "avg_generated_tokens": 30.188,
+    "avg_reference_chars": 2760.562,
+    "avg_prediction_chars": 133.75
+  },
+  "efficiency": {
+    "load_time_s": 0.412948,
+    "rss_before_load_mb": 298.01,
+    "rss_after_load_mb": 337.72,
+    "rss_delta_load_mb": 39.71,
+    "total_eval_time_s": 10.211023,
+    "examples_per_second": 1.566934,
+    "generated_tokens_per_second": 47.301823,
+    "latency_ms_mean": 638.188937,
+    "latency_ms_p50": 580.1937,
+    "latency_ms_p95": 1106.786375,
+    "latency_ms_first_batch_per_example": 575.7854
+  },
+  "environment": {
+    "python": "3.13.11",
+    "platform": "Windows-11-10.0.22621-SP0",
+    "cpu_count_logical": 12,
+    "cpu_count_physical": 6,
+    "torch_version": "2.11.0+cpu"
+  },
+  "generation": {
+    "max_source_length": 256,
+    "max_target_length": 200,
+    "max_label_length": 256,
+    "num_beams": 4,
+    "repetition_penalty": 1.3,
+    "no_repeat_ngram_size": 3,
+    "batch_size": 1
+  }
+}

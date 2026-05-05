@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+*.pyc
+
+# Local editor/runtime noise
+tempCodeRunnerFile.py
+
+# Experiment logs
+wandb/
+
+# Heavy optimized model artifacts
+02_Models/Optimized/
+02_Models/PyTorch/flan_t5_zillow_final1/model.safetensors
+04_Experiments/optimized/
+
+# Large legacy optimized exports from the old repo layout
+flan_t5_dynamic_int8.bin
+flan_t5_fp16.bin
