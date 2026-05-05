@@ -1,0 +1,39 @@
+{
+  "model_name": "prune_structured_mlp_intermediate_10",
+  "quality": {
+    "token_f1": 0.0022,
+    "rouge_l_f1": 0.0013,
+    "exact_match": 0.0,
+    "eval_loss": null
+  },
+  "efficiency": {
+    "disk_size_mb": 297.9,
+    "param_count": 58004864,
+    "load_time_s": 1.73,
+    "rss_before_load_mb": 529.1,
+    "rss_after_load_mb": 1035.2,
+    "rss_delta_load_mb": 506.0,
+    "latency_ms_mean": 192.7,
+    "latency_ms_p50": 182.6,
+    "latency_ms_p95": 295.4,
+    "examples_per_second": 5.1901,
+    "generated_tokens_per_second": 31.14
+  },
+  "generation": {
+    "eval_count": 10,
+    "avg_generated_tokens": 6,
+    "avg_reference_chars": 2682,
+    "num_beams": 1,
+    "batch_size": 1,
+    "max_source_length": 256,
+    "max_target_length": 128
+  },
+  "runtime_metadata": {
+    "device": "Android ARM64 Termux",
+    "loader_kind": "artifact_state_dict",
+    "runtime_target": "cpu",
+    "torch_dtype": "float32",
+    "torch_version": "2.11.0",
+    "cuda_available": false
+  }
+}

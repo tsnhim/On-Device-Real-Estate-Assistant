@@ -3,53 +3,18 @@
 Model: combined_structured_prune_then_quant__prune_structured_mlp_intermediate_10__fp16_cast_gpu
 ==================================================
 Disk size: 149.0 MB
-Detected FLOAT32 model — loading normally...
-Error loading: Error(s) in loading state_dict for T5ForConditionalGeneration:
-	size mismatch for encoder.block.0.layer.1.DenseReluDense.wi_0.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for encoder.block.0.layer.1.DenseReluDense.wi_1.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for encoder.block.0.layer.1.DenseReluDense.wo.weight: copying a param with shape torch.Size([512, 922]) from checkpoint, the shape in current model is torch.Size([512, 1024]).
-	size mismatch for encoder.block.1.layer.1.DenseReluDense.wi_0.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for encoder.block.1.layer.1.DenseReluDense.wi_1.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for encoder.block.1.layer.1.DenseReluDense.wo.weight: copying a param with shape torch.Size([512, 922]) from checkpoint, the shape in current model is torch.Size([512, 1024]).
-	size mismatch for encoder.block.2.layer.1.DenseReluDense.wi_0.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for encoder.block.2.layer.1.DenseReluDense.wi_1.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for encoder.block.2.layer.1.DenseReluDense.wo.weight: copying a param with shape torch.Size([512, 922]) from checkpoint, the shape in current model is torch.Size([512, 1024]).
-	size mismatch for encoder.block.3.layer.1.DenseReluDense.wi_0.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for encoder.block.3.layer.1.DenseReluDense.wi_1.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for encoder.block.3.layer.1.DenseReluDense.wo.weight: copying a param with shape torch.Size([512, 922]) from checkpoint, the shape in current model is torch.Size([512, 1024]).
-	size mismatch for encoder.block.4.layer.1.DenseReluDense.wi_0.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for encoder.block.4.layer.1.DenseReluDense.wi_1.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for encoder.block.4.layer.1.DenseReluDense.wo.weight: copying a param with shape torch.Size([512, 922]) from checkpoint, the shape in current model is torch.Size([512, 1024]).
-	size mismatch for encoder.block.5.layer.1.DenseReluDense.wi_0.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for encoder.block.5.layer.1.DenseReluDense.wi_1.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for encoder.block.5.layer.1.DenseReluDense.wo.weight: copying a param with shape torch.Size([512, 922]) from checkpoint, the shape in current model is torch.Size([512, 1024]).
-	size mismatch for encoder.block.6.layer.1.DenseReluDense.wi_0.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for encoder.block.6.layer.1.DenseReluDense.wi_1.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for encoder.block.6.layer.1.DenseReluDense.wo.weight: copying a param with shape torch.Size([512, 922]) from checkpoint, the shape in current model is torch.Size([512, 1024]).
-	size mismatch for encoder.block.7.layer.1.DenseReluDense.wi_0.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for encoder.block.7.layer.1.DenseReluDense.wi_1.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for encoder.block.7.layer.1.DenseReluDense.wo.weight: copying a param with shape torch.Size([512, 922]) from checkpoint, the shape in current model is torch.Size([512, 1024]).
-	size mismatch for decoder.block.0.layer.2.DenseReluDense.wi_0.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for decoder.block.0.layer.2.DenseReluDense.wi_1.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for decoder.block.0.layer.2.DenseReluDense.wo.weight: copying a param with shape torch.Size([512, 922]) from checkpoint, the shape in current model is torch.Size([512, 1024]).
-	size mismatch for decoder.block.1.layer.2.DenseReluDense.wi_0.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for decoder.block.1.layer.2.DenseReluDense.wi_1.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for decoder.block.1.layer.2.DenseReluDense.wo.weight: copying a param with shape torch.Size([512, 922]) from checkpoint, the shape in current model is torch.Size([512, 1024]).
-	size mismatch for decoder.block.2.layer.2.DenseReluDense.wi_0.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for decoder.block.2.layer.2.DenseReluDense.wi_1.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for decoder.block.2.layer.2.DenseReluDense.wo.weight: copying a param with shape torch.Size([512, 922]) from checkpoint, the shape in current model is torch.Size([512, 1024]).
-	size mismatch for decoder.block.3.layer.2.DenseReluDense.wi_0.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for decoder.block.3.layer.2.DenseReluDense.wi_1.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for decoder.block.3.layer.2.DenseReluDense.wo.weight: copying a param with shape torch.Size([512, 922]) from checkpoint, the shape in current model is torch.Size([512, 1024]).
-	size mismatch for decoder.block.4.layer.2.DenseReluDense.wi_0.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for decoder.block.4.layer.2.DenseReluDense.wi_1.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for decoder.block.4.layer.2.DenseReluDense.wo.weight: copying a param with shape torch.Size([512, 922]) from checkpoint, the shape in current model is torch.Size([512, 1024]).
-	size mismatch for decoder.block.5.layer.2.DenseReluDense.wi_0.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for decoder.block.5.layer.2.DenseReluDense.wi_1.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for decoder.block.5.layer.2.DenseReluDense.wo.weight: copying a param with shape torch.Size([512, 922]) from checkpoint, the shape in current model is torch.Size([512, 1024]).
-	size mismatch for decoder.block.6.layer.2.DenseReluDense.wi_0.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for decoder.block.6.layer.2.DenseReluDense.wi_1.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for decoder.block.6.layer.2.DenseReluDense.wo.weight: copying a param with shape torch.Size([512, 922]) from checkpoint, the shape in current model is torch.Size([512, 1024]).
-	size mismatch for decoder.block.7.layer.2.DenseReluDense.wi_0.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for decoder.block.7.layer.2.DenseReluDense.wi_1.weight: copying a param with shape torch.Size([922, 512]) from checkpoint, the shape in current model is torch.Size([1024, 512]).
-	size mismatch for decoder.block.7.layer.2.DenseReluDense.wo.weight: copying a param with shape torch.Size([512, 922]) from checkpoint, the shape in current model is torch.Size([512, 1024]).
+  Pruned FFN: 1024 → 922
+Load time:  1.59s
+Params:     58,004,864
+RAM delta:  364 MB
+Running 10 examples...
+  [5/10] lat=125ms tf1=0.008
+  [10/10] lat=145ms tf1=0.000
+
+Results:
+  token_f1:  0.0022
+  rouge_l:   0.0013
+  lat_mean:  163ms
+  lat_p95:   273ms
+  ex/s:      6.1389
+Saved: /data/data/com.termux/files/home/models/my_benchmark_results/combined_structured_prune_then_quant__prune_structured_mlp_intermediate_10__fp16_cast_gpu_metrics.json
