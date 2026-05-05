@@ -10,9 +10,9 @@ from pathlib import Path
 from typing import Any
 
 
-DEFAULT_OPTIMIZED_ROOT = Path("04_Experiments/optimized/flan_t5")
-DEFAULT_BASELINE_ROOT = Path("04_Experiments/benchmark")
-DEFAULT_OUTPUT_DIR = Path("04_Experiments/benchmark/plots/flan_t5")
+DEFAULT_OPTIMIZED_ROOT = Path("benchmarks/optimized/flan_t5")
+DEFAULT_BASELINE_ROOT = Path("benchmarks/runs")
+DEFAULT_OUTPUT_DIR = Path("benchmarks/visualizations/flan_t5")
 
 PALETTE = {
     "baseline": "#4C6A92",

@@ -63,24 +63,6 @@ def build_qa_pairs_from_hf_train_split(train_split: Iterable[dict[str, Any]]) ->
     return pairs
 
 
-def load_local_retrieval_pairs(records_path: Path) -> list[QAPair]:
-    raw = json.loads(records_path.read_text(encoding="utf-8"))
-    pairs: list[QAPair] = []
-    for item in raw:
-        question = clean_text(item["question"])
-        answer = clean_text(item["answer"])
-        topic = item.get("topic")
-        pairs.append(
-            QAPair(
-                example_id=build_example_id(question, answer, topic),
-                input_text=question,
-                target_text=answer,
-                topic=topic,
-            )
-        )
-    return pairs
-
-
 def save_pairs_jsonl(pairs: Iterable[QAPair], output_path: Path) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with output_path.open("w", encoding="utf-8") as f:

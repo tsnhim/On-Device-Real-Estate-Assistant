@@ -20,10 +20,10 @@ from src.optimization.flan_t5_artifacts import load_model_and_tokenizer_from_man
 
 @dataclass
 class BenchmarkConfig:
-    model_path: str = "02_Models/PyTorch/flan_t5_zillow_final1"
+    model_path: str = "models/flan_t5_zillow_final1"
     strategy_manifest: str = ""
-    split_manifest: str = "04_Experiments/benchmark/flan_t5_baseline/split_manifest.json"
-    output_dir: str = "04_Experiments/benchmark/flan_t5_baseline/results"
+    split_manifest: str = "benchmarks/data/flan_t5_baseline/split_manifest.json"
+    output_dir: str = "benchmarks/runs/flan_t5_baseline/results"
     batch_size: int = 1
     max_eval_samples: int = 0
     max_source_length: int = 256
@@ -37,10 +37,10 @@ class BenchmarkConfig:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Benchmark the retained FLAN-T5 checkpoint on a saved eval split.")
-    parser.add_argument("--model-path", default="02_Models/PyTorch/flan_t5_zillow_final1")
+    parser.add_argument("--model-path", default="models/flan_t5_zillow_final1")
     parser.add_argument("--strategy-manifest", default="")
-    parser.add_argument("--split-manifest", default="04_Experiments/benchmark/flan_t5_baseline/split_manifest.json")
-    parser.add_argument("--output-dir", default="04_Experiments/benchmark/flan_t5_baseline/results")
+    parser.add_argument("--split-manifest", default="benchmarks/data/flan_t5_baseline/split_manifest.json")
+    parser.add_argument("--output-dir", default="benchmarks/runs/flan_t5_baseline/results")
     parser.add_argument("--batch-size", type=int, default=1)
     parser.add_argument("--max-eval-samples", type=int, default=0)
     parser.add_argument("--max-source-length", type=int, default=256)

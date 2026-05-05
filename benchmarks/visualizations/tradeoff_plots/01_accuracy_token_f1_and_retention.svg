@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="560" viewBox="0 0 1180 560">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; fill: #1f2933; }
+    .title { font-size: 22px; font-weight: 700; }
+    .subtitle { font-size: 12px; fill: #52606d; }
+    .axis { stroke: #9aa5b1; stroke-width: 1; }
+    .grid { stroke: #d9e2ec; stroke-width: 1; stroke-dasharray: 4 5; }
+    .label { font-size: 11px; fill: #334e68; }
+    .tick { font-size: 10px; fill: #52606d; }
+    .legend { font-size: 12px; fill: #334e68; }
+  </style>
+  <text class="title" x="36" y="34">Accuracy: Token F1 and Reference Retention</text>
+<text class="subtitle" x="36" y="55">Shows actual Token F1 and the same score as percentage retained versus the selected reference model.</text>
+<text class="label" x="320" y="70">Token F1</text>
+<text class="label" x="792" y="70">Retention vs reference</text>
+<text class="label" x="28" y="94">combined_unstructured_prune_then_quant__prune_unstructured_mlp_l1_10__dynamic_int8_cpu_ptq</text>
+<rect x="320" y="78" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="78" width="360.0" height="24" fill="#7048e8" fill-opacity="0.84"/>
+<text class="label" x="688.0" y="94">0.2236</text>
+<rect x="792" y="78" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="78" width="300.0" height="24" fill="#7048e8" fill-opacity="0.68"/>
+<text class="label" x="1100.0" y="94">13975.0%</text>
+<text class="label" x="28" y="138">dynamic_int8_cpu_ptq</text>
+<rect x="320" y="122" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="122" width="352.8" height="24" fill="#087f5b" fill-opacity="0.84"/>
+<text class="label" x="680.8" y="138">0.2191</text>
+<rect x="792" y="122" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="122" width="294.0" height="24" fill="#087f5b" fill-opacity="0.68"/>
+<text class="label" x="1094.0" y="138">13693.8%</text>
+<text class="label" x="28" y="182">prune_unstructured_global_l1_20</text>
+<rect x="320" y="166" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="166" width="46.7" height="24" fill="#d9480f" fill-opacity="0.84"/>
+<text class="label" x="374.7" y="182">0.0290</text>
+<rect x="792" y="166" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="166" width="38.9" height="24" fill="#d9480f" fill-opacity="0.68"/>
+<text class="label" x="838.9" y="182">1812.5%</text>
+<text class="label" x="28" y="226">prune_unstructured_global_l1_10</text>
+<rect x="320" y="210" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="210" width="14.2" height="24" fill="#d9480f" fill-opacity="0.84"/>
+<text class="label" x="342.2" y="226">0.0088</text>
+<rect x="792" y="210" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="210" width="11.8" height="24" fill="#d9480f" fill-opacity="0.68"/>
+<text class="label" x="811.8" y="226">550.0%</text>
+<text class="label" x="28" y="270">prune_unstructured_attention_l1_10</text>
+<rect x="320" y="254" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="254" width="2.6" height="24" fill="#d9480f" fill-opacity="0.84"/>
+<text class="label" x="330.6" y="270">0.0016</text>
+<rect x="792" y="254" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="254" width="2.1" height="24" fill="#d9480f" fill-opacity="0.68"/>
+<text class="label" x="802.1" y="270">100.0%</text>
+<text class="label" x="28" y="314">bf16_cast_gpu</text>
+<rect x="320" y="298" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="298" width="0.0" height="24" fill="#087f5b" fill-opacity="0.84"/>
+<text class="label" x="328.0" y="314">0.0000</text>
+<rect x="792" y="298" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="298" width="0.0" height="24" fill="#087f5b" fill-opacity="0.68"/>
+<text class="label" x="800.0" y="314">0.0%</text>
+<text class="label" x="28" y="358">combined_quant_then_prune_selected__bf16_cast_gpu__prune_unstructured_mlp_l1_10</text>
+<rect x="320" y="342" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="342" width="0.0" height="24" fill="#7048e8" fill-opacity="0.84"/>
+<text class="label" x="328.0" y="358">0.0000</text>
+<rect x="792" y="342" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="342" width="0.0" height="24" fill="#7048e8" fill-opacity="0.68"/>
+<text class="label" x="800.0" y="358">0.0%</text>
+<text class="label" x="28" y="402">combined_quant_then_prune_selected__fp16_cast_gpu__prune_unstructured_mlp_l1_10</text>
+<rect x="320" y="386" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="386" width="0.0" height="24" fill="#7048e8" fill-opacity="0.84"/>
+<text class="label" x="328.0" y="402">0.0000</text>
+<rect x="792" y="386" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="386" width="0.0" height="24" fill="#7048e8" fill-opacity="0.68"/>
+<text class="label" x="800.0" y="402">0.0%</text>
+<text class="label" x="28" y="446">fp16_cast_gpu</text>
+<rect x="320" y="430" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="430" width="0.0" height="24" fill="#087f5b" fill-opacity="0.84"/>
+<text class="label" x="328.0" y="446">0.0000</text>
+<rect x="792" y="430" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="430" width="0.0" height="24" fill="#087f5b" fill-opacity="0.68"/>
+<text class="label" x="800.0" y="446">0.0%</text>
+<text class="label" x="28" y="490">prune_unstructured_mlp_l1_10</text>
+<rect x="320" y="474" width="360" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="320" y="474" width="0.0" height="24" fill="#d9480f" fill-opacity="0.84"/>
+<text class="label" x="328.0" y="490">0.0000</text>
+<rect x="792" y="474" width="300" height="24" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="792" y="474" width="0.0" height="24" fill="#d9480f" fill-opacity="0.68"/>
+<text class="label" x="800.0" y="490">0.0%</text>
+</svg>

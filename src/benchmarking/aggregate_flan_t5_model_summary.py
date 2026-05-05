@@ -7,9 +7,9 @@ from pathlib import Path
 from typing import Any
 
 
-DEFAULT_OPTIMIZED_ROOT = Path("04_Experiments/optimized/flan_t5")
-DEFAULT_BASELINE_ROOT = Path("04_Experiments/benchmark")
-DEFAULT_OUTPUT_CSV = Path("04_Experiments/benchmark/plots/flan_t5/model_summary_metrics.csv")
+DEFAULT_OPTIMIZED_ROOT = Path("benchmarks/optimized/flan_t5")
+DEFAULT_BASELINE_ROOT = Path("benchmarks/runs")
+DEFAULT_OUTPUT_CSV = Path("benchmarks/visualizations/model_summary_metrics.csv")
 
 
 def parse_args() -> argparse.Namespace:

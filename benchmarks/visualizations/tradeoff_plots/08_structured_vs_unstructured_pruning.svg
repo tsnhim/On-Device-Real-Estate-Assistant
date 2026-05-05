@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="352" viewBox="0 0 1180 352">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; fill: #1f2933; }
+    .title { font-size: 22px; font-weight: 700; }
+    .subtitle { font-size: 12px; fill: #52606d; }
+    .axis { stroke: #9aa5b1; stroke-width: 1; }
+    .grid { stroke: #d9e2ec; stroke-width: 1; stroke-dasharray: 4 5; }
+    .label { font-size: 11px; fill: #334e68; }
+    .tick { font-size: 10px; fill: #52606d; }
+    .legend { font-size: 12px; fill: #334e68; }
+  </style>
+  <text class="title" x="36" y="34">Structured vs Unstructured Pruning</text>
+<text class="subtitle" x="36" y="55">Prune-only models. Bars are normalized within this subset; longer is better for every metric.</text>
+<rect x="760" y="28" width="14" height="14" fill="#d9480f" fill-opacity="0.84"/><text class="legend" x="782" y="40">Unstructured</text>
+<rect x="890" y="28" width="14" height="14" fill="#7048e8" fill-opacity="0.84"/><text class="legend" x="912" y="40">Structured</text>
+<text class="label" x="328" y="76">Token F1</text>
+<text class="label" x="542" y="76">Throughput</text>
+<text class="label" x="756" y="76">Latency</text>
+<text class="label" x="970" y="76">Size</text>
+<text class="label" x="28" y="105">prune_unstructured_global_l1_20</text>
+<rect x="328" y="88" width="180" height="25" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="328" y="88" width="180.0" height="25" fill="#d9480f" fill-opacity="0.84"/>
+<text class="tick" x="328" y="131">0.0290</text>
+<rect x="542" y="88" width="180" height="25" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="542" y="88" width="4.0" height="25" fill="#d9480f" fill-opacity="0.84"/>
+<text class="tick" x="542" y="131">0.81/s</text>
+<rect x="756" y="88" width="180" height="25" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="756" y="88" width="4.0" height="25" fill="#d9480f" fill-opacity="0.84"/>
+<text class="tick" x="756" y="131">1237.9 ms</text>
+<rect x="970" y="88" width="180" height="25" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="970" y="88" width="90.0" height="25" fill="#d9480f" fill-opacity="0.84"/>
+<text class="tick" x="970" y="131">307.9 MB</text>
+<text class="label" x="28" y="161">prune_unstructured_global_l1_10</text>
+<rect x="328" y="144" width="180" height="25" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="328" y="144" width="54.6" height="25" fill="#d9480f" fill-opacity="0.84"/>
+<text class="tick" x="328" y="187">0.0088</text>
+<rect x="542" y="144" width="180" height="25" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="542" y="144" width="59.5" height="25" fill="#d9480f" fill-opacity="0.84"/>
+<text class="tick" x="542" y="187">2.98/s</text>
+<rect x="756" y="144" width="180" height="25" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="756" y="144" width="147.3" height="25" fill="#d9480f" fill-opacity="0.84"/>
+<text class="tick" x="756" y="187">335.8 ms</text>
+<rect x="970" y="144" width="180" height="25" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="970" y="144" width="90.0" height="25" fill="#d9480f" fill-opacity="0.84"/>
+<text class="tick" x="970" y="187">307.9 MB</text>
+<text class="label" x="28" y="217">prune_unstructured_attention_l1_10</text>
+<rect x="328" y="200" width="180" height="25" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="328" y="200" width="9.9" height="25" fill="#d9480f" fill-opacity="0.84"/>
+<text class="tick" x="328" y="243">0.0016</text>
+<rect x="542" y="200" width="180" height="25" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="542" y="200" width="145.0" height="25" fill="#d9480f" fill-opacity="0.84"/>
+<text class="tick" x="542" y="243">6.09/s</text>
+<rect x="756" y="200" width="180" height="25" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="756" y="200" width="175.4" height="25" fill="#d9480f" fill-opacity="0.84"/>
+<text class="tick" x="756" y="243">164.1 ms</text>
+<rect x="970" y="200" width="180" height="25" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="970" y="200" width="90.0" height="25" fill="#d9480f" fill-opacity="0.84"/>
+<text class="tick" x="970" y="243">307.9 MB</text>
+<text class="label" x="28" y="273">prune_unstructured_mlp_l1_10</text>
+<rect x="328" y="256" width="180" height="25" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="328" y="256" width="4.0" height="25" fill="#d9480f" fill-opacity="0.84"/>
+<text class="tick" x="328" y="299">0.0000</text>
+<rect x="542" y="256" width="180" height="25" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="542" y="256" width="180.0" height="25" fill="#d9480f" fill-opacity="0.84"/>
+<text class="tick" x="542" y="299">7.37/s</text>
+<rect x="756" y="256" width="180" height="25" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="756" y="256" width="180.0" height="25" fill="#d9480f" fill-opacity="0.84"/>
+<text class="tick" x="756" y="299">135.7 ms</text>
+<rect x="970" y="256" width="180" height="25" fill="#eef2f7" stroke="#d9e2ec"/>
+<rect x="970" y="256" width="90.0" height="25" fill="#d9480f" fill-opacity="0.84"/>
+<text class="tick" x="970" y="299">307.9 MB</text>
+</svg>

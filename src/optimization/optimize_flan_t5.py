@@ -29,9 +29,9 @@ from src.optimization.flan_t5_registry import (
 from src.optimization.flan_t5_transforms import apply_pipeline_step_for_artifact
 
 
-DEFAULT_MODEL_PATH = "02_Models/PyTorch/flan_t5_zillow_final1"
-DEFAULT_OUTPUT_ROOT = "04_Experiments/optimized/flan_t5"
-DEFAULT_SPLIT_MANIFEST = "04_Experiments/benchmark/flan_t5_baseline/split_manifest.json"
+DEFAULT_MODEL_PATH = "models/flan_t5_zillow_final1"
+DEFAULT_OUTPUT_ROOT = "benchmarks/optimized/flan_t5"
+DEFAULT_SPLIT_MANIFEST = "benchmarks/data/flan_t5_baseline/split_manifest.json"
 
 
 @dataclass

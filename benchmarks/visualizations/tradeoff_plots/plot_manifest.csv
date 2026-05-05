@@ -1,0 +1,10 @@
+file,title
+01_accuracy_token_f1_and_retention.svg,Accuracy: Token F1 and reference retention
+03_quality_vs_latency_bubble.svg,Quality vs latency bubble plot
+04_quality_retention_vs_size_reduction.svg,Quality retention vs size reduction
+05_latency_mean_and_p95.svg,Latency mean and P95
+06_disk_size_comparison.svg,Disk Size Comparison
+07_throughput_comparison.svg,Throughput Comparison
+08_structured_vs_unstructured_pruning.svg,Structured vs unstructured pruning
+model_tradeoff_scorecard.csv,Model tradeoff scorecard CSV
+09_balanced_score_ranking.svg,Gated balanced score ranking

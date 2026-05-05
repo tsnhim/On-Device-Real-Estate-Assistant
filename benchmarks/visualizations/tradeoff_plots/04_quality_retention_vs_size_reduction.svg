@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="660" viewBox="0 0 1040 660">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; fill: #1f2933; }
+    .title { font-size: 22px; font-weight: 700; }
+    .subtitle { font-size: 12px; fill: #52606d; }
+    .axis { stroke: #9aa5b1; stroke-width: 1; }
+    .grid { stroke: #d9e2ec; stroke-width: 1; stroke-dasharray: 4 5; }
+    .label { font-size: 11px; fill: #334e68; }
+    .tick { font-size: 10px; fill: #52606d; }
+    .legend { font-size: 12px; fill: #334e68; }
+  </style>
+  <text class="title" x="36" y="34">Quality Retention vs Size Reduction</text>
+<text class="subtitle" x="36" y="55">Best region is upper-right: high quality retention and high model-size reduction.</text>
+<circle cx="594" cy="34" r="6" fill="#3b5b92"/>
+<text class="legend" x="604" y="38">Baseline</text>
+<circle cx="722" cy="34" r="6" fill="#087f5b"/>
+<text class="legend" x="732" y="38">Quantization</text>
+<circle cx="850" cy="34" r="6" fill="#d9480f"/>
+<text class="legend" x="860" y="38">Pruning</text>
+<circle cx="978" cy="34" r="6" fill="#7048e8"/>
+<text class="legend" x="988" y="38">Combined</text>
+<line class="axis" x1="86" y1="574" x2="988" y2="574"/>
+<line class="axis" x1="86" y1="78" x2="86" y2="574"/>
+<line class="grid" x1="126.5" y1="78" x2="126.5" y2="574"/>
+<text class="tick" x="116.5" y="596">0%</text>
+<line class="grid" x1="261.3" y1="78" x2="261.3" y2="574"/>
+<text class="tick" x="251.3" y="596">10%</text>
+<line class="grid" x1="396.1" y1="78" x2="396.1" y2="574"/>
+<text class="tick" x="386.1" y="596">20%</text>
+<line class="grid" x1="531.0" y1="78" x2="531.0" y2="574"/>
+<text class="tick" x="521.0" y="596">30%</text>
+<line class="grid" x1="665.8" y1="78" x2="665.8" y2="574"/>
+<text class="tick" x="655.8" y="596">40%</text>
+<line class="grid" x1="800.7" y1="78" x2="800.7" y2="574"/>
+<text class="tick" x="790.7" y="596">50%</text>
+<line class="grid" x1="935.5" y1="78" x2="935.5" y2="574"/>
+<text class="tick" x="925.5" y="596">60%</text>
+<line class="grid" x1="1070.3" y1="78" x2="1070.3" y2="574"/>
+<text class="tick" x="1060.3" y="596">70%</text>
+<line class="grid" x1="86" y1="574.0" x2="988" y2="574.0"/>
+<text class="tick" x="41" y="578.0">0%</text>
+<line class="grid" x1="86" y1="573.2" x2="988" y2="573.2"/>
+<text class="tick" x="41" y="577.2">25%</text>
+<line class="grid" x1="86" y1="572.4" x2="988" y2="572.4"/>
+<text class="tick" x="41" y="576.4">50%</text>
+<line class="grid" x1="86" y1="571.6" x2="988" y2="571.6"/>
+<text class="tick" x="41" y="575.6">75%</text>
+<line class="grid" x1="86" y1="570.8" x2="988" y2="570.8"/>
+<text class="tick" x="41" y="574.8">100%</text>
+<line class="grid" x1="86" y1="570.0" x2="988" y2="570.0"/>
+<text class="tick" x="41" y="574.0">125%</text>
+<circle cx="800.5" cy="574.0" r="9" fill="#087f5b" fill-opacity="0.82"/>
+<text class="label" x="812.5" y="578.0">bf16_cast_gpu</text>
+<circle cx="800.5" cy="574.0" r="9" fill="#7048e8" fill-opacity="0.82"/>
+<text class="label" x="812.5" y="578.0">combined_quant_then_prune_selected__bf16_cast_gpu__prune_unstructured_mlp_l1_10</text>
+<circle cx="800.5" cy="574.0" r="9" fill="#7048e8" fill-opacity="0.82"/>
+<text class="label" x="812.5" y="578.0">combined_quant_then_prune_selected__fp16_cast_gpu__prune_unstructured_mlp_l1_10</text>
+<circle cx="920.6" cy="131.1" r="9" fill="#7048e8" fill-opacity="0.82"/>
+<text class="label" x="932.6" y="135.1">combined_unstructured_prune_then_quant__prune_unstructured_mlp_l1_10__dynamic_int8_cpu_ptq</text>
+<circle cx="920.6" cy="140.1" r="9" fill="#087f5b" fill-opacity="0.82"/>
+<text class="label" x="932.6" y="144.1">dynamic_int8_cpu_ptq</text>
+<circle cx="800.5" cy="574.0" r="9" fill="#087f5b" fill-opacity="0.82"/>
+<text class="label" x="812.5" y="578.0">fp16_cast_gpu</text>
+<circle cx="126.5" cy="570.8" r="9" fill="#d9480f" fill-opacity="0.82"/>
+<text class="label" x="138.5" y="574.8">prune_unstructured_attention_l1_10</text>
+<circle cx="126.5" cy="556.6" r="9" fill="#d9480f" fill-opacity="0.82"/>
+<text class="label" x="138.5" y="560.6">prune_unstructured_global_l1_10</text>
+<circle cx="126.5" cy="516.6" r="9" fill="#d9480f" fill-opacity="0.82"/>
+<text class="label" x="138.5" y="520.6">prune_unstructured_global_l1_20</text>
+<circle cx="126.5" cy="574.0" r="9" fill="#d9480f" fill-opacity="0.82"/>
+<text class="label" x="138.5" y="578.0">prune_unstructured_mlp_l1_10</text>
+<text class="label" x="449.0" y="632">Disk size reduction vs reference</text>
+<text class="label" transform="translate(24 402.0) rotate(-90)">Token F1 retention vs reference</text>
+</svg>

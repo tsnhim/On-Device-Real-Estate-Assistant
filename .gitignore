@@ -7,11 +7,13 @@ tempCodeRunnerFile.py
 
 # Experiment logs
 wandb/
+my_benchmark_results/
+*_log.txt
 
 # Heavy optimized model artifacts
-02_Models/Optimized/
-02_Models/PyTorch/flan_t5_zillow_final1/model.safetensors
-04_Experiments/optimized/
+models/flan_t5_zillow_final1/model.safetensors
+benchmarks/optimized/
+benchmarks/runs/**/results*/
 
 # Large legacy optimized exports from the old repo layout
 flan_t5_dynamic_int8.bin

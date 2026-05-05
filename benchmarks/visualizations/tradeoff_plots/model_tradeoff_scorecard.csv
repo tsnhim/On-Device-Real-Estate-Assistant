@@ -1,0 +1,11 @@
+model_name,family,balanced_score,efficiency_score,accuracy_gate_pass,token_f1,quality_retention_pct,latency_ms_mean,latency_ms_p95,latency_speedup,disk_size_mb,size_reduction_pct,examples_per_second
+prune_unstructured_attention_l1_10,Pruning,0.75,0.75,True,0.0016,100.0,164.1,235.4,1.0,307.93,0.0,6.0929
+prune_unstructured_global_l1_10,Pruning,0.564640020285815,0.564640020285815,True,0.0088,550.0,335.8,1739.0,0.48868374032162,307.93,0.0,2.9779
+prune_unstructured_global_l1_20,Pruning,0.41500519301460576,0.41500519301460576,True,0.029,1812.5000000000002,1237.9,6331.2,0.1325632118911059,307.93,0.0,0.8078
+dynamic_int8_cpu_ptq,Quantization,0.2551267873824448,0.2551267873824448,True,0.2191,13693.75,15236.9,19735.6,0.010769907264601067,126.58,58.89325496054299,0.0656
+combined_unstructured_prune_then_quant__prune_unstructured_mlp_l1_10__dynamic_int8_cpu_ptq,Combined,0.25,0.25,True,0.2236,13974.999999999998,15430.8,19503.6,0.010634575005832491,126.58,58.89325496054299,0.0648
+bf16_cast_gpu,Quantization,0.0,0.0,False,0.0,0.0,241.1,394.2,0.6806304437992534,154.01,49.98538628909168,4.1471
+combined_quant_then_prune_selected__bf16_cast_gpu__prune_unstructured_mlp_l1_10,Combined,0.0,0.0,False,0.0,0.0,169.1,287.4,0.9704316972205795,154.01,49.98538628909168,5.9147
+combined_quant_then_prune_selected__fp16_cast_gpu__prune_unstructured_mlp_l1_10,Combined,0.0,0.0,False,0.0,0.0,120.6,180.8,1.3606965174129353,154.01,49.98538628909168,8.2905
+fp16_cast_gpu,Quantization,0.0,0.0,False,0.0,0.0,162.9,271.5,1.007366482504604,154.01,49.98538628909168,6.1392
+prune_unstructured_mlp_l1_10,Pruning,0.0,0.0,False,0.0,0.0,135.7,190.7,1.2092851879145174,307.93,0.0,7.3673

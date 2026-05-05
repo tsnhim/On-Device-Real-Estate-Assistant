@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="720" viewBox="0 0 1120 720">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; fill: #1f2933; }
+    .title { font-size: 22px; font-weight: 700; }
+    .subtitle { font-size: 12px; fill: #52606d; }
+    .axis { stroke: #9aa5b1; stroke-width: 1; }
+    .grid { stroke: #d9e2ec; stroke-width: 1; stroke-dasharray: 4 5; }
+    .label { font-size: 11px; fill: #334e68; }
+    .tick { font-size: 10px; fill: #52606d; }
+    .legend { font-size: 12px; fill: #334e68; }
+  </style>
+  <text class="title" x="36" y="34">Quality vs Latency Tradeoff</text>
+<text class="subtitle" x="36" y="55">Bubble size = disk size. X-axis uses log scale because latency spans two orders of magnitude.</text>
+<circle cx="650" cy="34" r="6" fill="#3b5b92"/>
+<text class="legend" x="660" y="38">Baseline</text>
+<circle cx="778" cy="34" r="6" fill="#087f5b"/>
+<text class="legend" x="788" y="38">Quantization</text>
+<circle cx="906" cy="34" r="6" fill="#d9480f"/>
+<text class="legend" x="916" y="38">Pruning</text>
+<circle cx="1034" cy="34" r="6" fill="#7048e8"/>
+<text class="legend" x="1044" y="38">Combined</text>
+<line class="axis" x1="96" y1="628" x2="1072" y2="628"/>
+<line class="axis" x1="96" y1="78" x2="96" y2="628"/>
+<line class="grid" x1="114.3" y1="78" x2="114.3" y2="628"/>
+<text class="tick" x="99.3" y="650">100</text>
+<line class="grid" x1="240.4" y1="78" x2="240.4" y2="628"/>
+<text class="tick" x="225.4" y="650">200</text>
+<line class="grid" x1="407.2" y1="78" x2="407.2" y2="628"/>
+<text class="tick" x="392.2" y="650">500</text>
+<line class="grid" x1="533.4" y1="78" x2="533.4" y2="628"/>
+<text class="tick" x="518.4" y="650">1000</text>
+<line class="grid" x1="659.5" y1="78" x2="659.5" y2="628"/>
+<text class="tick" x="644.5" y="650">2000</text>
+<line class="grid" x1="826.3" y1="78" x2="826.3" y2="628"/>
+<text class="tick" x="811.3" y="650">5000</text>
+<line class="grid" x1="952.4" y1="78" x2="952.4" y2="628"/>
+<text class="tick" x="937.4" y="650">10000</text>
+<line class="grid" x1="96" y1="628.0" x2="1072" y2="628.0"/>
+<text class="tick" x="52" y="632.0">0.00</text>
+<line class="grid" x1="96" y1="518.2" x2="1072" y2="518.2"/>
+<text class="tick" x="52" y="522.2">0.05</text>
+<line class="grid" x1="96" y1="408.4" x2="1072" y2="408.4"/>
+<text class="tick" x="52" y="412.4">0.10</text>
+<line class="grid" x1="96" y1="298.6" x2="1072" y2="298.6"/>
+<text class="tick" x="52" y="302.6">0.15</text>
+<line class="grid" x1="96" y1="188.8" x2="1072" y2="188.8"/>
+<text class="tick" x="52" y="192.8">0.20</text>
+<line class="grid" x1="96" y1="78.9" x2="1072" y2="78.9"/>
+<text class="tick" x="52" y="82.9">0.25</text>
+<circle cx="204.4" cy="624.5" r="22.0" fill="#d9480f" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="230.4" y="628.5">prune_unstructured_attention_l1_10</text>
+<circle cx="334.7" cy="608.7" r="22.0" fill="#d9480f" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="360.7" y="612.7">prune_unstructured_global_l1_10</text>
+<circle cx="572.2" cy="564.3" r="22.0" fill="#d9480f" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="598.2" y="568.3">prune_unstructured_global_l1_20</text>
+<circle cx="169.8" cy="628.0" r="22.0" fill="#d9480f" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="195.8" y="632.0">prune_unstructured_mlp_l1_10</text>
+<circle cx="274.4" cy="628.0" r="17.3" fill="#087f5b" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="295.8" y="632.0">bf16_cast_gpu</text>
+<circle cx="209.9" cy="628.0" r="17.3" fill="#7048e8" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="231.2" y="632.0">combined_quant_then_prune_selected__bf16_cast_gpu__prune_unstructured_mlp_l1_10</text>
+<circle cx="148.4" cy="628.0" r="17.3" fill="#7048e8" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="169.7" y="632.0">combined_quant_then_prune_selected__fp16_cast_gpu__prune_unstructured_mlp_l1_10</text>
+<circle cx="203.1" cy="628.0" r="17.3" fill="#087f5b" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="224.4" y="632.0">fp16_cast_gpu</text>
+<circle cx="1031.4" cy="136.9" r="16.3" fill="#7048e8" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="1051.6" y="140.9">combined_unstructured_prune_then_quant__prune_unstructured_mlp_l1_10__dynamic_int8_cpu_ptq</text>
+<circle cx="1029.1" cy="146.8" r="16.3" fill="#087f5b" fill-opacity="0.72" stroke="#1f2933" stroke-width="0.7"/>
+<text class="label" x="1049.3" y="150.8">dynamic_int8_cpu_ptq</text>
+<text class="label" x="504.0" y="690">Mean latency (ms/example, log scale) - lower is better</text>
+<text class="label" transform="translate(24 423.0) rotate(-90)">Token F1 - higher is better</text>
+</svg>
