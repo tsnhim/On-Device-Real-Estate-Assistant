@@ -1,0 +1,21 @@
+
+==================================================
+Model: prune_unstructured_attention_l1_10
+==================================================
+Disk size: 307.9 MB
+Detected FLOAT32 model — loading normally...
+Load time:  1.88s
+Params:     60,511,616
+RAM delta:  525 MB
+Running 10 examples...
+  [5/10] lat=219ms tf1=0.000
+  [10/10] lat=137ms tf1=0.016
+
+Results:
+  token_f1:   0.0016
+  rouge_l:    0.0011
+  lat_mean:   164ms
+  lat_p95:    235ms
+  ex/s:       6.0929
+  tok/s:      15.8
+Saved: /data/data/com.termux/files/home/models/my_benchmark_results/prune_unstructured_attention_l1_10_metrics.json

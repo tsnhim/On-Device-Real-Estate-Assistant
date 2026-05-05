@@ -1,0 +1,40 @@
+{
+  "model_name": "fp16_cast_gpu",
+  "quality": {
+    "token_f1": 0.0,
+    "rouge_l_f1": 0.0,
+    "exact_match": 0.0,
+    "eval_loss": null
+  },
+  "efficiency": {
+    "disk_size_mb": 154.01,
+    "param_count": 60511616,
+    "load_time_s": 1.714,
+    "rss_before_load_mb": 235.1,
+    "rss_after_load_mb": 613.5,
+    "rss_delta_load_mb": 378.4,
+    "latency_ms_mean": 162.9,
+    "latency_ms_p50": 152.3,
+    "latency_ms_p95": 271.5,
+    "examples_per_second": 6.1392,
+    "generated_tokens_per_second": 19.03
+  },
+  "generation": {
+    "eval_count": 10,
+    "avg_generated_tokens": 3.1,
+    "avg_reference_chars": 2682,
+    "avg_prediction_chars": 0,
+    "num_beams": 1,
+    "batch_size": 1,
+    "max_source_length": 256,
+    "max_target_length": 128
+  },
+  "runtime_metadata": {
+    "device": "Android ARM64 Termux",
+    "loader_kind": "artifact_state_dict",
+    "runtime_target": "cpu",
+    "torch_dtype": "float32",
+    "torch_version": "2.11.0",
+    "cuda_available": false
+  }
+}

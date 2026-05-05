@@ -1,0 +1,40 @@
+{
+  "model_name": "prune_unstructured_global_l1_20",
+  "quality": {
+    "token_f1": 0.029,
+    "rouge_l_f1": 0.0153,
+    "exact_match": 0.0,
+    "eval_loss": null
+  },
+  "efficiency": {
+    "disk_size_mb": 307.93,
+    "param_count": 60511616,
+    "load_time_s": 1.889,
+    "rss_before_load_mb": 234.2,
+    "rss_after_load_mb": 758.3,
+    "rss_delta_load_mb": 524.1,
+    "latency_ms_mean": 1237.9,
+    "latency_ms_p50": 843.2,
+    "latency_ms_p95": 6331.2,
+    "examples_per_second": 0.8078,
+    "generated_tokens_per_second": 25.93
+  },
+  "generation": {
+    "eval_count": 10,
+    "avg_generated_tokens": 32.1,
+    "avg_reference_chars": 2682,
+    "avg_prediction_chars": 0,
+    "num_beams": 1,
+    "batch_size": 1,
+    "max_source_length": 256,
+    "max_target_length": 128
+  },
+  "runtime_metadata": {
+    "device": "Android ARM64 Termux",
+    "loader_kind": "artifact_state_dict",
+    "runtime_target": "cpu",
+    "torch_dtype": "float32",
+    "torch_version": "2.11.0",
+    "cuda_available": false
+  }
+}
