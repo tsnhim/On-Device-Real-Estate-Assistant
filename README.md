@@ -283,6 +283,22 @@ implementation("com.microsoft.onnxruntime:onnxruntime-android:1.17.3")
 
 At runtime, `MainActivity.kt` copies the `onnx_model` asset folder into app storage, creates ONNX Runtime sessions for the encoder and decoder, tokenizes with SentencePiece, and decodes greedily token by token.
 
+## Android App User Experience
+
+The app provides two ways to input questions:
+
+1. **Text Input** — Type your real-estate question directly using the phone keyboard
+
+![Alt text](image/image2.jpeg)
+
+2. **Voice Input** — Tap the microphone button to record speech, which is converted to text using Google Speech Recognition. This service works offline if you have downloaded the English language package beforehand.
+
+![Alt text](image/image3.jpeg)
+
+Once the input text is ready, the question is sent to the FP16-quantized FLAN-T5 model running on-device. The model processes the input and generates a detailed answer specific to the real-estate domain. The answer is then displayed on the screen in real-time.
+
+![Alt text](image/image1.jpeg)
+
 ## Current Limitations
 
 - The app currently runs FLAN-T5 ONNX inference, but the retained benchmark results include separate Android/Termux-style PyTorch measurements for optimized artifacts.
