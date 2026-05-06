@@ -23,15 +23,16 @@ models/
   flan_t5_zillow_final1/              Hugging Face FLAN-T5 model assets
   whisper_model/                      Whisper speech model assets
   export_to_onnx.py                   PyTorch/Hugging Face -> ONNX export script
+  zillow_flan_t5_finetune.ipynb       Fine-tune Flan T5 base model
 benchmarks/
-  data/flan_t5_baseline/              fixed QA pair cache and eval split
+  data/flan_t5_baseline/              Fixed QA pair cache and eval split
   requirements.txt                    Python benchmark dependencies
-  visualizations/                     plot generator and final SVG charts
+  visualizations/                     Plot generator and final SVG charts
 results/
-  all_benchmarks.json                 final Android benchmark aggregate
+  all_benchmarks.json                 Final Android benchmark aggregate
 src/
-  benchmarking/                       benchmark runner, split builder, metrics
-  optimization/                       pruning/quantization strategy code
+  benchmarking/                       Benchmark runner, split builder, metrics
+  optimization/                       Pruning/quantization strategy code
 ```
 
 ## System Overview
@@ -65,6 +66,36 @@ The Android app does not run PyTorch or TensorFlow directly. It loads the export
 
 ## Methodology
 
+### Model Fine-Tuning
+
+The project starts with fine-tuning a base FLAN-T5 model on the real estate Q&A domain:
+
+**Setup:**
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install torch transformers datasets evaluate rouge-score
+```
+
+**Fine-tuning process** (see [models/zillow_flan_t5_finetune.ipynb](models/zillow_flan_t5_finetune.ipynb)):
+
+1. Load the `zillow/real_estate_v1` dataset from Hugging Face
+2. Extract Q&A pairs with conversational context from raw messages
+3. Create train/validation/test splits (80% / 10% / 10%)
+4. Tokenize inputs and targets separately with max lengths 512 / 256
+5. Train using `Seq2SeqTrainer` with:
+   - Base model: `google/flan-t5-base`
+   - Optimizer: AdamW with learning rate `2e-5`
+   - Scheduler: Cosine with warmup
+   - Epochs: 20, batch size: 16
+   - Evaluation metric: ROUGE-L F1
+6. Evaluate on test set using ROUGE-1, ROUGE-2, ROUGE-L metrics
+7. Save fine-tuned model to `models/flan_t5_zillow_final1/`
+
+The fine-tuned model serves as the baseline for all subsequent optimization experiments.
+
+### Benchmark Optimization Strategies
+
 The benchmark compares optimization families that are common for on-device transformer deployment:
 
 - Quantization: `fp16`, `bf16`, and `int8`
@@ -95,6 +126,80 @@ Measured efficiency metrics:
 - Mean, P50, and P95 latency
 - Examples per second
 - Generated tokens per second
+
+### Running Benchmark on Android Phone via Termux
+
+To run the benchmark on a physical Android device using Termux:
+
+**Setup:**
+
+1. Install [Termux](https://termux.dev/) from F-Droid or Google Play Store
+2. Open Termux and update packages:
+   ```bash
+   pkg update && pkg upgrade
+   ```
+
+3. Install Python and required build tools:
+   ```bash
+   pkg install python python-dev clang
+   ```
+
+4. Create and activate a Python virtual environment:
+   ```bash
+   python -m venv /data/data/com.termux/files/home/benchmark_env
+   source /data/data/com.termux/files/home/benchmark_env/bin/activate
+   ```
+
+5. Install Python benchmark dependencies:
+   ```bash
+   pip install --upgrade pip
+   pip install -r benchmarks/requirements.txt
+   ```
+
+**Transfer Project Files:**
+
+6. Copy the project to Termux storage (use ADB or file transfer):
+   ```bash
+   adb push /path/to/On-Device-Real-Estate-Assistant /sdcard/
+   ```
+   
+   Then in Termux:
+   ```bash
+   cp -r /sdcard/On-Device-Real-Estate-Assistant ~/
+   cd ~/On-Device-Real-Estate-Assistant
+   ```
+
+**Run Benchmark:**
+
+7. Run the benchmark harness on a specific model:
+   ```bash
+   python -m src.benchmarking.benchmark_flan_t5 \
+     --model-path models/flan_t5_zillow_final1 \
+     --split-manifest benchmarks/data/flan_t5_baseline/split_manifest.json \
+     --output-dir benchmarks/runs/termux_results \
+     --device auto
+   ```
+
+8. For baseline model only:
+   ```bash
+   python -m src.benchmarking.benchmark_flan_t5 \
+     --model-path models/flan_t5_zillow_final1 \
+     --split-manifest benchmarks/data/flan_t5_baseline/split_manifest.json \
+     --output-dir benchmarks/runs/baseline_results \
+     --device cpu
+   ```
+
+9. Retrieve results:
+   ```bash
+   adb pull /sdcard/On-Device-Real-Estate-Assistant/benchmarks/runs/termux_results /local/path/
+   ```
+
+**Notes:**
+- ARM64 Termux environment is significantly slower than x86_64 systems
+- Expected baseline latency on ARM64: ~5-10 seconds per inference (vs. 1-2 seconds on desktop)
+- Allow 30+ minutes for a full benchmark run on a single model
+- Monitor device temperature; add breaks between runs if needed
+- Use `--device cpu` to force CPU inference if GPU is unavailable
 
 ## Results
 
